@@ -1,5 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BRINK — How close are we to WW3?</title><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☢️</text></svg>">
+<title>MIDNIGHT HOUR — How close are we to World War III?</title><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕛</text></svg>">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 <style>
 :root{--r:#ff2a2a;--bg:#050506;--p:#0e0e11;--ln:#24242a;--t:#e8e6e3;--m:#8a8790}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#2a0505 0%,var(--bg) 55%);color:var(--t);font:15px/1.5 "Inter",system-ui,sans-serif;min-height:100vh}
@@ -8,7 +9,7 @@ a{color:#ff8a8a;text-decoration:none}a:hover{text-decoration:underline}
 .w{max-width:1100px;margin:0 auto;padding:20px}
 .pv{background:#ffcc00;color:#000;text-align:center;font:700 12px monospace;padding:4px}
 header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ln);padding-bottom:10px}
-.logo{font:900 30px/1 "Courier New",monospace;letter-spacing:8px;color:var(--r);text-shadow:0 0 18px rgba(255,42,42,.7)}
+.logo{font:900 30px/1 "Courier New",monospace;letter-spacing:6px;color:var(--r);text-shadow:0 0 18px rgba(255,42,42,.7)}
 .logo small{display:block;font-size:11px;letter-spacing:3px;color:var(--m);margin-top:4px;text-shadow:none}
 .live{font:12px monospace;color:var(--m)}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--r);margin-right:6px;animation:b 1s infinite}
 @keyframes b{50%{opacity:.15}}
@@ -20,6 +21,7 @@ header{display:flex;justify-content:space-between;align-items:center;border-bott
 .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .num b{font:900 110px/1 "Courier New",monospace;color:#fff;text-shadow:0 0 30px var(--r),0 0 60px var(--r)}
 .num span{font:700 13px monospace;letter-spacing:4px;color:var(--m)}
+.mtm{font:900 13px monospace;letter-spacing:3px;color:#fff;margin-bottom:6px;opacity:.85}.mtm b{font-size:26px;color:var(--r);text-shadow:0 0 14px var(--r);letter-spacing:2px;margin-right:8px}
 .band{font:900 34px monospace;letter-spacing:10px;color:var(--r);text-shadow:0 0 20px rgba(255,42,42,.8);animation:b 2.4s infinite}
 .scale{display:flex;gap:3px;margin:14px 0 6px}.scale div{flex:1;height:10px;border-radius:2px;opacity:.25}.scale div.on{opacity:1;box-shadow:0 0 8px currentColor}
 .sl{display:flex;justify-content:space-between;font:11px monospace;color:var(--m)}
@@ -43,18 +45,32 @@ ul{margin:0;padding-left:18px}li{margin:6px 0}
 #chart{position:relative}#chart svg{width:100%;height:auto;display:block}
 #tip{position:absolute;pointer-events:none;background:#000;border:1px solid var(--r);box-shadow:0 0 12px rgba(255,42,42,.5);padding:6px 9px;font:12px monospace;border-radius:4px;display:none;white-space:nowrap;z-index:5}
 .lg{font:11px monospace;color:var(--m);margin-top:8px}.lg i{display:inline-block;width:18px;height:0;border-top:2px solid var(--r);vertical-align:middle;margin:0 4px 0 12px}
+.mw{display:grid;grid-template-columns:1fr 300px;gap:14px}#map{height:460px;border-radius:8px;border:1px solid var(--ln);background:#000}
+.leaflet-container{background:#050506;font:13px Inter,system-ui,sans-serif}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#0b0b0e;color:var(--t);border:1px solid var(--r);box-shadow:0 0 18px rgba(255,42,42,.45)}
+.leaflet-popup-content{margin:12px 14px;max-width:270px}.pp b{font-size:14px}.pp .sv{font:900 12px monospace}.pp p{margin:6px 0;font-size:13px;color:#cfcbd2}.pp a,.leaflet-container .pp a{display:block;font-size:12px;color:#ff8a8a}
+.pin{border-radius:50%;position:relative}.pin:after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid currentColor;animation:pl 1.8s ease-out infinite}
+@keyframes pl{from{transform:scale(.5);opacity:.9}to{transform:scale(2.2);opacity:0}}
+.lyr{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;font:12px monospace}.lyr label{border:1px solid var(--ln);padding:4px 9px;border-radius:4px;cursor:pointer;background:#0b0b0e}
+.tf{list-style:none;padding:0;margin:0;max-height:460px;overflow:auto}.tf li{display:grid;grid-template-columns:22px 1fr 40px;gap:8px;padding:9px 6px;border-top:1px solid var(--ln);cursor:pointer;margin:0}.tf li:hover{background:#16161a}
+.tf .rk{font:700 12px monospace;color:var(--m)}.tf .nm{font-weight:700;font-size:13px}.tf .nm small{display:block;font-weight:400;color:var(--m);font-size:11px}.tf .sv{font:900 18px monospace;text-align:right}
+.uv{color:#ffb35b;font-size:12px}
+@media(max-width:760px){.mw{grid-template-columns:1fr}#map{height:360px}.tf{max-height:none}}
 @media(max-width:760px){.hero,.g2{grid-template-columns:1fr}.f{grid-template-columns:1fr 46px}.f .why{grid-column:1/-1}.num b{font-size:80px}.logo{font-size:22px;letter-spacing:5px}}
 </style></head><body>
 <div class="w">
-<header><div class="logo">B R I N K<small>HOW CLOSE ARE WE TO WORLD WAR III?</small></div><div class="live"><span class="dot"></span><span id="upd">loading…</span></div></header>
+<header><div class="logo">MIDNIGHT HOUR<small>HOW CLOSE ARE WE TO WORLD WAR III?</small></div><div class="live"><span class="dot"></span><span id="upd">loading…</span></div></header>
 <section class="hero">
  <div class="gw"><div class="radar"></div><svg viewBox="0 0 200 200" id="g"></svg><div class="num"><b id="sc">–</b><span>OUT OF 10</span></div></div>
- <div><div class="band" id="band">…</div>
+ <div><div class="mtm" id="mtm"></div><div class="band" id="band">…</div>
   <div class="scale" id="scale"></div><div class="sl"><span>1 CALM</span><span>TENSE</span><span>ELEVATED</span><span>DANGER</span><span>10 BRINK</span></div>
   <p class="verdict" id="verdict"></p><div class="dl" id="dl"></div><p class="foot" id="delta"></p></div>
 </section>
 <div class="card"><h2>📈 Last 30 days</h2><div id="chart"><div id="tip"></div></div>
 <div class="lg"><i style="border-top-style:dashed"></i>reconstructed from dated sources <i></i>live daily reading <i style="border-top:2px dotted #fff;opacity:.6"></i>key event (hover)</div></div>
+<div class="card"><h2>🌍 Conflict map — where the fire is</h2>
+<div class="lyr" id="lyr"></div>
+<div class="mw"><div id="map"></div><div><div class="foot" style="margin-bottom:4px"><b>TOP FLASHPOINTS</b> · tap to locate</div><ol class="tf" id="tf"></ol></div></div>
+<p class="foot" id="mapnote"></p></div>
 <div class="card"><h2>⚠ The 9 signals</h2><div id="factors"></div></div>
 <div class="g2">
  <div class="card"><h2>What changed</h2><ul id="changed"></ul></div>
@@ -67,9 +83,9 @@ ul{margin:0;padding-left:18px}li{margin:6px 0}
 <li><b>Travelling?</b> Check your government's advisory and register with your embassy (Thai MFA: <a href="https://www.mfa.go.th/en/">mfa.go.th</a>, US: <a href="https://travel.state.gov/">travel.state.gov</a>).</li>
 <li><b>Keep a basic 72-hour kit</b> (water, cash, medicine, power bank) — useful for floods and blackouts too.</li>
 <li><b>Check before you share.</b> Most "WW3 tonight" posts are recycled or fake.</li></ul></div>
-<div class="card"><h2>Methodology</h2><p class="foot">Nine signals are each scored 1–10 and combined by weight (shown on each row). <b>Live</b> signals refresh automatically every day at ~07:00 Bangkok: <i>Prediction markets</i> = combined Polymarket odds of five major escalation events (0% → 1, 40%+ → 10); <i>Market fear</i> = average 1-year percentile of VIX, gold, Brent and the ITA defense ETF (Yahoo Finance); <i>Travel bans</i> = count of US State Dept Level-4 countries above a chronic baseline of ~18, plus embassy departures. <b>Curated</b> signals are scored by an analyst from linked reporting and dated. Bands: 1–2.4 Calm · 2.5–4.4 Tense · 4.5–6.4 Elevated · 6.5–8.4 Danger · 8.5–10 Brink. If a live source fails, its last value is kept and marked stale.</p>
+<div class="card"><h2>Methodology</h2><p class="foot">Nine signals are each scored 1–10 and combined by weight (shown on each row). <b>Live</b> signals refresh automatically every day at ~07:00 Bangkok: <i>Prediction markets</i> = combined Polymarket odds of five major escalation events (0% → 1, 40%+ → 10); <i>Market fear</i> = average 1-year percentile of VIX, gold, Brent and the ITA defense ETF (Yahoo Finance); <i>Travel bans</i> = count of US State Dept Level-4 countries above a chronic baseline of ~18, plus embassy departures. <b>Curated</b> signals are scored by an analyst from linked reporting and dated. <b>Minutes to midnight</b> is this page's own score shown as a clock (10 = midnight, 1 = 60 minutes away); it is <i>not</i> the Bulletin's Doomsday Clock, which is one of the nine signals. Bands: 1–2.4 Calm · 2.5–4.4 Tense · 4.5–6.4 Elevated · 6.5–8.4 Danger · 8.5–10 Brink. If a live source fails, its last value is kept and marked stale.</p>
 <p class="foot"><b>30-day chart:</b> points from 1 Nov 2026 onward are <b>live</b> (recorded by the daily 07:00 refresh). Earlier points are <b>reconstructed</b>: market fear from real Yahoo daily closes, prediction markets from Polymarket's public daily price history, curated signals from dated reporting (ISW, JINSA, CBS, Al Jazeera) carried forward between documented change points, and travel advisories carried at today's value because the State Dept feed is not dated per change. Note: the "ceasefire breaks before midterms" market loses risk mechanically as 3 Nov approaches.</p>
-<p class="foot"><b>Disclaimer:</b> BRINK is an independent, unofficial gauge for awareness only. It is not a prediction, not the US DEFCON system, and not investment advice. Free data only. A Piyaster 99/99 project.</p></div>
+<p class="foot"><b>Disclaimer:</b> MIDNIGHT HOUR is an independent, unofficial gauge for awareness only. It is not a prediction, not the US DEFCON system, and not investment advice. Free data only. A Piyaster 99/99 project.</p></div>
 </div>
 <script>
 const C=s=>s<2.5?'#3ddc84':s<4.5?'#c6e14b':s<6.5?'#ffb020':s<8.5?'#ff5a1f':'#ff1a1a';
@@ -83,6 +99,7 @@ fetch('data/brink.json?'+Date.now()).then(r=>r.json()).then(d=>{
  for(let n=1;n<=10;n++){const[x,y]=P(a0+sweep*(n-1)/9,66);svg+=`<text x="${x}" y="${y+3}" fill="#8a8790" font-size="8" text-anchor="middle" font-family="monospace">${n}</text>`}
  const[nx,ny]=P(ang,92);svg+=`<circle cx="${nx}" cy="${ny}" r="4" fill="#fff" style="filter:drop-shadow(0 0 6px red)"/>`;g.innerHTML=svg;
  let k=1;const t=setInterval(()=>{k=Math.min(s,k+.1);sc.textContent=k.toFixed(1);if(k>=s)clearInterval(t)},25);
+ const mn=Math.round((10-s)/9*60),hh=mn?`23:${String(60-mn).padStart(2,'0')}`:'00:00';mtm.innerHTML=`<b>${hh}</b>${mn} MINUTES TO MIDNIGHT`;
  band.textContent=d.band;band.style.color=C(s);
  scale.innerHTML=[...Array(10)].map((_,i)=>`<div class="${i+1<=Math.round(s)?'on':''}" style="background:${C(i+1)};color:${C(i+1)}"></div>`).join('');
  const top=[...d.factors].sort((a,b)=>b.score*b.weight-a.score*a.weight).slice(0,2).map(f=>f.name.toLowerCase());
@@ -124,5 +141,30 @@ fetch('data/brink_history.json?'+Date.now()).then(r=>r.json()).then(h=>{
   tip.style.display='block';tip.innerHTML=`<b>${new Date(p.date).toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'})}</b> · <b style="color:${C(p.score)}">${p.score}</b> · ${p.mode.toUpperCase()}${e2?'<br>⚑ '+e(e2[1]):''}`;
   const px=X(i)*r.width/Wd;tip.style.left=Math.min(px+10,r.width-230)+'px';tip.style.top='10px'});
  hz.addEventListener('mouseleave',()=>{tip.style.display='none';cx.setAttribute('opacity',0)});
+});
+
+fetch('data/hotspots.json?'+Date.now()).then(r=>r.json()).then(h=>{
+ const m=L.map('map',{worldCopyJump:true,zoomSnap:.5,scrollWheelZoom:false}).setView([28,60],2);
+ m.attributionControl.addAttribution('Borders: <a href="https://github.com/topojson/world-atlas" target="_blank">world-atlas</a> / Natural Earth');
+ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(r=>r.json()).then(w=>{L.geoJSON(topojson.feature(w,w.objects.countries),{interactive:false,style:{color:'#5a1c1c',weight:.7,fillColor:'#1a1a20',fillOpacity:1}}).addTo(m)});
+ L.rectangle([[-85,-540],[85,540]],{interactive:false,stroke:false,fillColor:'#07070a',fillOpacity:1}).addTo(m);
+ const lk=s=>(s||[]).map(x=>`<a href="${e(x[1])}" target="_blank" rel="noopener">↗ ${e(x[0])}</a>`).join('');
+ const G={war:L.layerGroup(),choke:L.layerGroup(),carriers:L.layerGroup(),nuclear:L.layerGroup(),dnt:L.layerGroup()};
+ const mk={};
+ const hs=[...h.hotspots].sort((a,b)=>b.sev-a.sev);
+ hs.forEach(p=>{const sz=10+p.sev*2.4,c=C(p.sev);
+  const ic=L.divIcon({className:'',html:`<div class="pin" style="width:${sz}px;height:${sz}px;background:${c};color:${c};box-shadow:0 0 ${sz}px ${c}"></div>`,iconSize:[sz,sz]});
+  mk[p.id]=L.marker([p.lat,p.lng],{icon:ic,zIndexOffset:p.sev*100}).bindPopup(`<div class="pp"><b>${e(p.name)}</b><br><span class="sv" style="color:${c}">SEVERITY ${p.sev}/10 · ${p.layer==='war'?'ACTIVE CONFLICT':'CHOKEPOINT'}</span><p><span class="tag v">VERIFIED</span>${e(p.why)}</p>${p.unverified?`<p class="uv"><span class="tag s">UNVERIFIED</span>${e(p.unverified)}</p>`:''}<div class="foot">Updated ${e(p.updated)}</div>${lk(p.src)}</div>`).addTo(G[p.layer])});
+ h.carriers.forEach(c=>L.marker([c.lat,c.lng],{icon:L.divIcon({className:'',html:'<div style="font-size:20px;filter:drop-shadow(0 0 6px #4da3ff)">⚓</div>',iconSize:[22,22]})}).bindPopup(`<div class="pp"><b>${e(c.name)}</b><br><span class="sv" style="color:#4da3ff">US CARRIER · approx. position</span><p>${c.verified?'':'<span class="tag s">UNVERIFIED</span>'}${e(c.where)}</p><div class="foot">As of ${e(c.updated)}</div>${lk(c.src)}</div>`).addTo(G.carriers));
+ h.nuclear.forEach(n=>L.circleMarker([n[1],n[2]],{radius:4+Math.sqrt(n[3])/9,color:'#ffd400',weight:1,fillColor:'#ffd400',fillOpacity:.12,dashArray:'2 3'}).bindPopup(`<div class="pp"><b>☢ ${e(n[0])}</b><p>~${n[3].toLocaleString()} nuclear warheads (estimate)</p>${lk([h.nuclear_src])}</div>`).addTo(G.nuclear));
+ (h.dnt||[]).forEach(d=>L.circleMarker([d.lat,d.lng],{radius:d.departure?7:5,color:d.departure?'#ff2a2a':'#a35cff',weight:1.5,fillOpacity:.25}).bindPopup(`<div class="pp"><b>${e(d.name)}</b><p>US State Dept: Level ${d.level} "Do Not Travel"${d.departure?' · <b>embassy staff ordered/authorized to leave</b>':''}</p><div class="foot">Auto from feed ${h.dnt_updated?bkk(h.dnt_updated):''}</div>${lk([['travel.state.gov advisory',d.link]])}</div>`).addTo(G.dnt));
+ const names={war:'🔴 Active conflicts',choke:'🟠 Chokepoints',carriers:'⚓ US carriers',nuclear:'☢ Nuclear states',dnt:'🟣 Do-Not-Travel'},on={war:1,choke:1,carriers:1,nuclear:0,dnt:0};
+ lyr.innerHTML=Object.keys(G).map(k=>`<label><input type="checkbox" data-k="${k}" ${on[k]?'checked':''}> ${names[k]}</label>`).join('');
+ Object.keys(G).forEach(k=>on[k]&&G[k].addTo(m));
+ lyr.addEventListener('change',ev=>{const k=ev.target.dataset.k;ev.target.checked?G[k].addTo(m):m.removeLayer(G[k])});
+ tf.innerHTML=hs.map((p,i)=>`<li data-id="${p.id}"><span class="rk">${i+1}</span><span class="nm">${e(p.name)}<small>${e(p.why.split('. ')[0])}.</small></span><span class="sv" style="color:${C(p.sev)}">${p.sev}</span></li>`).join('');
+ tf.addEventListener('click',ev=>{const li=ev.target.closest('li');if(!li)return;const p=hs.find(x=>x.id===li.dataset.id);G[p.layer].addTo(m);lyr.querySelector(`[data-k=${p.layer}]`).checked=true;m.flyTo([p.lat,p.lng],4,{duration:.8});setTimeout(()=>mk[p.id].openPopup(),850)});
+ mapnote.innerHTML=`Pins are curated from dated reporting (reviewed ${e(h.reviewed)}); severity uses MIDNIGHT HOUR's 1–10 bands. Carrier positions are approximate, from <a href="https://news.usni.org/category/fleet-tracker" target="_blank" rel="noopener">USNI Fleet Tracker</a>. The Do-Not-Travel layer updates automatically from the US State Dept feed each morning. Nuclear warhead counts: <a href="${h.nuclear_src[1]}" target="_blank" rel="noopener">FAS estimates</a>.`;
+ window._map=m;window._mk=mk;
 });
 </script></body></html>
