@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""BRINK — WW3 meter. Builds data/brink.json. Free sources only, no API keys, stdlib only.
+"""MIDNIGHT HOUR — WW3 meter. Builds data/brink.json. Free sources only, no API keys, stdlib only.
 Live: Polymarket gamma API (public), Yahoo Finance chart API, US State Dept advisory RSS.
 Curated (analyst-reviewed, every claim linked): data/curated.json.
 Fail-safe: any live source that fails keeps its previous value (marked stale)."""

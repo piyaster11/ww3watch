@@ -1,4 +1,4 @@
-"""Shared history helpers for BRINK."""
+"""Shared history helpers for MIDNIGHT HOUR."""
 import json, os
 D = os.path.join(os.path.dirname(__file__), '..', 'data')
 H = os.path.join(D, 'brink_history.json')

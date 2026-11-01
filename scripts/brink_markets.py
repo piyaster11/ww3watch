@@ -1,4 +1,4 @@
-# Polymarket markets used by BRINK: slug, label, invert (YES is the safe outcome)
+# Polymarket markets used by MIDNIGHT HOUR: slug, label, invert (YES is the safe outcome)
 MARKETS = [  # slug, label, invert (True if YES is the safe outcome)
  ('us-iran-ceasefire-continues-through-the-midterms', 'US–Iran ceasefire breaks before midterms', True),
  ('will-china-invade-taiwan-before-2027', 'China invades Taiwan in 2026', False),
