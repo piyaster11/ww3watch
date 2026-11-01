@@ -54,6 +54,11 @@ ul{margin:0;padding-left:18px}li{margin:6px 0}
 .tf{list-style:none;padding:0;margin:0;max-height:460px;overflow:auto}.tf li{display:grid;grid-template-columns:22px 1fr 40px;gap:8px;padding:9px 6px;border-top:1px solid var(--ln);cursor:pointer;margin:0}.tf li:hover{background:#16161a}
 .tf .rk{font:700 12px monospace;color:var(--m)}.tf .nm{font-weight:700;font-size:13px}.tf .nm small{display:block;font-weight:400;color:var(--m);font-size:11px}.tf .sv{font:900 18px monospace;text-align:right}
 .uv{color:#ffb35b;font-size:12px}
+#pmap{height:420px;border-radius:8px;border:1px solid var(--ln);background:#050506}
+.pl{list-style:none;padding:0;margin:0;max-height:420px;overflow:auto}.pl li{padding:8px 6px;border-top:1px solid var(--ln);cursor:pointer;margin:0;font-size:13px}.pl li:hover{background:#16161a}
+.pl .d{font:11px monospace;color:var(--m)}.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.new{font:700 9px monospace;background:#ff1a1a;color:#fff;padding:1px 5px;border-radius:3px;margin-left:6px;animation:b 1.2s infinite}
+.plg{display:flex;flex-wrap:wrap;gap:12px;font:12px monospace;margin-bottom:10px}
 @media(max-width:760px){.mw{grid-template-columns:1fr}#map{height:360px}.tf{max-height:none}}
 @media(max-width:760px){.hero,.g2{grid-template-columns:1fr}.f{grid-template-columns:1fr 46px}.f .why{grid-column:1/-1}.num b{font-size:80px}.logo{font-size:22px;letter-spacing:5px}}
 </style></head><body>
@@ -72,6 +77,10 @@ ul{margin:0;padding-left:18px}li{margin:6px 0}
 <div class="lyr" id="lyr"></div>
 <div class="mw"><div id="map"></div><div><div class="foot" style="margin-bottom:4px"><b>TOP FLASHPOINTS</b> · tap to locate</div><ol class="tf" id="tf"></ol></div></div>
 <p class="foot" id="mapnote"></p></div>
+<div class="card"><h2>🛡 Who's telling citizens to prepare</h2>
+<div class="plg" id="plg"></div>
+<div class="mw"><div id="pmap"></div><div><div class="foot" style="margin-bottom:4px"><b>GOVERNMENT WARNINGS</b> · newest first</div><ul class="pl" id="pl"></ul></div></div>
+<p class="foot" id="pnote"></p></div>
 <div class="card"><h2>⚠ The 9 signals</h2><div id="factors"></div></div>
 <div class="g2">
  <div class="card"><h2>What changed</h2><ul id="changed"></ul></div>
@@ -167,5 +176,24 @@ fetch('data/hotspots.json?'+Date.now()).then(r=>r.json()).then(h=>{
  tf.addEventListener('click',ev=>{const li=ev.target.closest('li');if(!li)return;const p=hs.find(x=>x.id===li.dataset.id);G[p.layer].addTo(m);lyr.querySelector(`[data-k=${p.layer}]`).checked=true;m.flyTo([p.lat,p.lng],4,{duration:.8});setTimeout(()=>mk[p.id].openPopup(),850)});
  mapnote.innerHTML=`Pins are curated from dated reporting (reviewed ${e(h.reviewed)}); severity uses MIDNIGHT HOUR's 1–10 bands. Carrier positions are approximate, from <a href="https://news.usni.org/category/fleet-tracker" target="_blank" rel="noopener">USNI Fleet Tracker</a>. The Do-Not-Travel layer updates automatically from the US State Dept feed each morning. Nuclear warhead counts: <a href="${h.nuclear_src[1]}" target="_blank" rel="noopener">FAS estimates</a>.`;
  window._map=m;window._mk=mk;
+});
+
+Promise.all([fetch('data/prepare.json?'+Date.now()).then(r=>r.json()),fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(r=>r.json())]).then(([d,w])=>{
+ const CAT=d.categories,by={},now=new Date();d.items.forEach(x=>by[x.id]=x);
+ const isNew=x=>/^\d{4}-\d{2}-\d{2}$/.test(x.date)&&(now-new Date(x.date))/864e5<=30;
+ const fd=s=>/^\d{4}-\d{2}-\d{2}$/.test(s)?new Date(s).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}):/^\d{4}-\d{2}$/.test(s)?new Date(s+'-01').toLocaleDateString('en-GB',{month:'short',year:'numeric'}):s==='standing'?'Standing guidance':s;
+ const pm=L.map('pmap',{worldCopyJump:true,zoomSnap:.5,scrollWheelZoom:false}).setView([45,30],2);
+ pm.attributionControl.addAttribution('Borders: <a href="https://github.com/topojson/world-atlas" target="_blank">world-atlas</a> / Natural Earth');
+ const pop=x=>`<div class="pp"><b>${e(x.c)}</b>${isNew(x)?'<span class="new">NEW</span>':''}<br><span class="sv" style="color:${CAT[x.cat][1]}">${e(CAT[x.cat][0]).toUpperCase()}</span><p>${e(x.what)}</p><div class="foot">${e(fd(x.date))}</div>${x.src.map(s=>`<a href="${e(s[1])}" target="_blank" rel="noopener">↗ ${e(s[0])}</a>`).join('')}</div>`;
+ const lay={};
+ L.geoJSON(topojson.feature(w,w.objects.countries),{style:f=>{const x=by[f.id];return x?{color:isNew(x)?'#fff':CAT[x.cat][1],weight:isNew(x)?1.6:.8,fillColor:CAT[x.cat][1],fillOpacity:.55}:{color:'#5a1c1c',weight:.6,fillColor:'#1a1a20',fillOpacity:1}},
+  onEachFeature:(f,l)=>{const x=by[f.id];if(x){l.bindPopup(pop(x));lay[x.id]=l}else l.options.interactive=false}}).addTo(pm);
+ plg.innerHTML=Object.values(CAT).map(c=>`<span><i class="sw" style="background:${c[1]}"></i>${e(c[0])}</span>`).join('')+'<span><span class="new">NEW</span> = last 30 days</span>';
+ const key=x=>/^\d{4}/.test(x.date)?x.date:'0000';
+ const its=[...d.items].sort((a,b)=>key(b).localeCompare(key(a)));
+ pl.innerHTML=its.map(x=>`<li data-id="${x.id}"><i class="sw" style="background:${CAT[x.cat][1]}"></i><b>${e(x.c)}</b>${isNew(x)?'<span class="new">NEW</span>':''}<div class="d">${e(fd(x.date))} · ${e(CAT[x.cat][0])}</div></li>`).join('')+
+  d.bloc.map(b=>`<li><i class="sw" style="background:${CAT[b[1]][1]}"></i><b>${e(b[0])}</b><div class="d">${e(fd(b[2]))} · ${e(b[3])} <a href="${e(b[4])}" target="_blank" rel="noopener">↗</a></div></li>`).join('');
+ pl.addEventListener('click',ev=>{const li=ev.target.closest('li[data-id]');if(!li||ev.target.closest('a'))return;const l=lay[li.dataset.id];if(!l)return;pm.flyToBounds(l.getBounds(),{maxZoom:5,duration:.8});setTimeout(()=>l.openPopup(l.getBounds().getCenter()),850)});
+ pnote.innerHTML=`Government and embassy statements only, each linked and dated (reviewed ${e(d.reviewed)}). Most European kits are long-running resilience campaigns, not signs of imminent war; "NEW" marks items from the last 30 days. Leave-now items come from US embassy advisories; other countries' advisories are not yet mapped.`;
 });
 </script></body></html>
