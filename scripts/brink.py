@@ -105,6 +105,20 @@ json.dump({'updated': NOW.strftime('%Y-%m-%dT%H:%M:%SZ'), 'score': score, 'band'
            'prev_score': prev.get('score')}, open(OUT, 'w'), indent=1, ensure_ascii=False)
 print(score, band, status)
 
+# --- Do-Not-Travel map layer -> data/hotspots.json (fail-safe; keeps previous list on failure) ---
+try:
+    from centroids import C
+    adv = next(f for f in factors if f['id'] == 'advisories')
+    if not adv.get('stale'):
+        hp = os.path.join(D, 'hotspots.json'); hs = json.load(open(hp))
+        hs['dnt'] = [{'name': r['label'], 'lat': C[r['label']][0], 'lng': C[r['label']][1], 'level': r['level'], 'departure': r['departure'], 'link': r['link']}
+                     for r in adv['rows'] if r['label'] in C]
+        hs['dnt_missing'] = [r['label'] for r in adv['rows'] if r['label'] not in C]
+        hs['dnt_updated'] = NOW.strftime('%Y-%m-%dT%H:%M:%SZ')
+        json.dump(hs, open(hp, 'w'), indent=1, ensure_ascii=False)
+except Exception as e:
+    print('dnt layer failed:', e)
+
 # --- append today's live point to data/brink_history.json (fail-safe) ---
 try:
     h = history.load()

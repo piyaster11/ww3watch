@@ -1,5 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PREVIEW · BRINK — How close are we to WW3?</title><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☢️</text></svg>">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 :root{--r:#ff2a2a;--bg:#050506;--p:#0e0e11;--ln:#24242a;--t:#e8e6e3;--m:#8a8790}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#2a0505 0%,var(--bg) 55%);color:var(--t);font:15px/1.5 "Inter",system-ui,sans-serif;min-height:100vh}
@@ -43,6 +44,16 @@ ul{margin:0;padding-left:18px}li{margin:6px 0}
 #chart{position:relative}#chart svg{width:100%;height:auto;display:block}
 #tip{position:absolute;pointer-events:none;background:#000;border:1px solid var(--r);box-shadow:0 0 12px rgba(255,42,42,.5);padding:6px 9px;font:12px monospace;border-radius:4px;display:none;white-space:nowrap;z-index:5}
 .lg{font:11px monospace;color:var(--m);margin-top:8px}.lg i{display:inline-block;width:18px;height:0;border-top:2px solid var(--r);vertical-align:middle;margin:0 4px 0 12px}
+.mw{display:grid;grid-template-columns:1fr 300px;gap:14px}#map{height:460px;border-radius:8px;border:1px solid var(--ln);background:#000}
+.leaflet-container{background:#050506;font:13px Inter,system-ui,sans-serif}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#0b0b0e;color:var(--t);border:1px solid var(--r);box-shadow:0 0 18px rgba(255,42,42,.45)}
+.leaflet-popup-content{margin:12px 14px;max-width:270px}.pp b{font-size:14px}.pp .sv{font:900 12px monospace}.pp p{margin:6px 0;font-size:13px;color:#cfcbd2}.pp a{display:block;font-size:12px}
+.pin{border-radius:50%;position:relative}.pin:after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid currentColor;animation:pl 1.8s ease-out infinite}
+@keyframes pl{from{transform:scale(.5);opacity:.9}to{transform:scale(2.2);opacity:0}}
+.lyr{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;font:12px monospace}.lyr label{border:1px solid var(--ln);padding:4px 9px;border-radius:4px;cursor:pointer;background:#0b0b0e}
+.tf{list-style:none;padding:0;margin:0;max-height:460px;overflow:auto}.tf li{display:grid;grid-template-columns:22px 1fr 40px;gap:8px;padding:9px 6px;border-top:1px solid var(--ln);cursor:pointer;margin:0}.tf li:hover{background:#16161a}
+.tf .rk{font:700 12px monospace;color:var(--m)}.tf .nm{font-weight:700;font-size:13px}.tf .nm small{display:block;font-weight:400;color:var(--m);font-size:11px}.tf .sv{font:900 18px monospace;text-align:right}
+.uv{color:#ffb35b;font-size:12px}
+@media(max-width:760px){.mw{grid-template-columns:1fr}#map{height:360px}.tf{max-height:none}}
 @media(max-width:760px){.hero,.g2{grid-template-columns:1fr}.f{grid-template-columns:1fr 46px}.f .why{grid-column:1/-1}.num b{font-size:80px}.logo{font-size:22px;letter-spacing:5px}}
 </style></head><body>
 <div class="pv">PREVIEW — not live yet</div>
@@ -56,6 +67,10 @@ ul{margin:0;padding-left:18px}li{margin:6px 0}
 </section>
 <div class="card"><h2>📈 Last 30 days</h2><div id="chart"><div id="tip"></div></div>
 <div class="lg"><i style="border-top-style:dashed"></i>reconstructed from dated sources <i></i>live daily reading <i style="border-top:2px dotted #fff;opacity:.6"></i>key event (hover)</div></div>
+<div class="card"><h2>🌍 Conflict map — where the fire is</h2>
+<div class="lyr" id="lyr"></div>
+<div class="mw"><div id="map"></div><div><div class="foot" style="margin-bottom:4px"><b>TOP FLASHPOINTS</b> · tap to locate</div><ol class="tf" id="tf"></ol></div></div>
+<p class="foot" id="mapnote"></p></div>
 <div class="card"><h2>⚠ The 9 signals</h2><div id="factors"></div></div>
 <div class="g2">
  <div class="card"><h2>What changed</h2><ul id="changed"></ul></div>
@@ -125,5 +140,28 @@ fetch('data/brink_history.json?'+Date.now()).then(r=>r.json()).then(h=>{
   tip.style.display='block';tip.innerHTML=`<b>${new Date(p.date).toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'})}</b> · <b style="color:${C(p.score)}">${p.score}</b> · ${p.mode.toUpperCase()}${e2?'<br>⚑ '+e(e2[1]):''}`;
   const px=X(i)*r.width/Wd;tip.style.left=Math.min(px+10,r.width-230)+'px';tip.style.top='10px'});
  hz.addEventListener('mouseleave',()=>{tip.style.display='none';cx.setAttribute('opacity',0)});
+});
+
+fetch('data/hotspots.json?'+Date.now()).then(r=>r.json()).then(h=>{
+ const m=L.map('map',{worldCopyJump:true,zoomSnap:.5,scrollWheelZoom:false}).setView([28,45],2.5);
+ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',subdomains:'abcd',maxZoom:8}).addTo(m);
+ const lk=s=>(s||[]).map(x=>`<a href="${e(x[1])}" target="_blank" rel="noopener">↗ ${e(x[0])}</a>`).join('');
+ const G={war:L.layerGroup(),choke:L.layerGroup(),carriers:L.layerGroup(),nuclear:L.layerGroup(),dnt:L.layerGroup()};
+ const mk={};
+ const hs=[...h.hotspots].sort((a,b)=>b.sev-a.sev);
+ hs.forEach(p=>{const sz=10+p.sev*2.4,c=C(p.sev);
+  const ic=L.divIcon({className:'',html:`<div class="pin" style="width:${sz}px;height:${sz}px;background:${c};color:${c};box-shadow:0 0 ${sz}px ${c}"></div>`,iconSize:[sz,sz]});
+  mk[p.id]=L.marker([p.lat,p.lng],{icon:ic,zIndexOffset:p.sev*100}).bindPopup(`<div class="pp"><b>${e(p.name)}</b><br><span class="sv" style="color:${c}">SEVERITY ${p.sev}/10 · ${p.layer==='war'?'ACTIVE CONFLICT':'CHOKEPOINT'}</span><p><span class="tag v">VERIFIED</span>${e(p.why)}</p>${p.unverified?`<p class="uv"><span class="tag s">UNVERIFIED</span>${e(p.unverified)}</p>`:''}<div class="foot">Updated ${e(p.updated)}</div>${lk(p.src)}</div>`).addTo(G[p.layer])});
+ h.carriers.forEach(c=>L.marker([c.lat,c.lng],{icon:L.divIcon({className:'',html:'<div style="font-size:20px;filter:drop-shadow(0 0 6px #4da3ff)">⚓</div>',iconSize:[22,22]})}).bindPopup(`<div class="pp"><b>${e(c.name)}</b><br><span class="sv" style="color:#4da3ff">US CARRIER · approx. position</span><p>${c.verified?'':'<span class="tag s">UNVERIFIED</span>'}${e(c.where)}</p><div class="foot">As of ${e(c.updated)}</div>${lk(c.src)}</div>`).addTo(G.carriers));
+ h.nuclear.forEach(n=>L.circleMarker([n[1],n[2]],{radius:4+Math.sqrt(n[3])/9,color:'#ffd400',weight:1,fillColor:'#ffd400',fillOpacity:.12,dashArray:'2 3'}).bindPopup(`<div class="pp"><b>☢ ${e(n[0])}</b><p>~${n[3].toLocaleString()} nuclear warheads (estimate)</p>${lk([h.nuclear_src])}</div>`).addTo(G.nuclear));
+ (h.dnt||[]).forEach(d=>L.circleMarker([d.lat,d.lng],{radius:d.departure?7:5,color:d.departure?'#ff2a2a':'#a35cff',weight:1.5,fillOpacity:.25}).bindPopup(`<div class="pp"><b>${e(d.name)}</b><p>US State Dept: Level ${d.level} "Do Not Travel"${d.departure?' · <b>embassy staff ordered/authorized to leave</b>':''}</p><div class="foot">Auto from feed ${h.dnt_updated?bkk(h.dnt_updated):''}</div>${lk([['travel.state.gov advisory',d.link]])}</div>`).addTo(G.dnt));
+ const names={war:'🔴 Active conflicts',choke:'🟠 Chokepoints',carriers:'⚓ US carriers',nuclear:'☢ Nuclear states',dnt:'🟣 Do-Not-Travel'},on={war:1,choke:1,carriers:1,nuclear:0,dnt:0};
+ lyr.innerHTML=Object.keys(G).map(k=>`<label><input type="checkbox" data-k="${k}" ${on[k]?'checked':''}> ${names[k]}</label>`).join('');
+ Object.keys(G).forEach(k=>on[k]&&G[k].addTo(m));
+ lyr.addEventListener('change',ev=>{const k=ev.target.dataset.k;ev.target.checked?G[k].addTo(m):m.removeLayer(G[k])});
+ tf.innerHTML=hs.map((p,i)=>`<li data-id="${p.id}"><span class="rk">${i+1}</span><span class="nm">${e(p.name)}<small>${e(p.why.split('. ')[0])}.</small></span><span class="sv" style="color:${C(p.sev)}">${p.sev}</span></li>`).join('');
+ tf.addEventListener('click',ev=>{const li=ev.target.closest('li');if(!li)return;const p=hs.find(x=>x.id===li.dataset.id);G[p.layer].addTo(m);lyr.querySelector(`[data-k=${p.layer}]`).checked=true;m.flyTo([p.lat,p.lng],4,{duration:.8});setTimeout(()=>mk[p.id].openPopup(),850)});
+ mapnote.innerHTML=`Pins are curated from dated reporting (reviewed ${e(h.reviewed)}); severity uses BRINK's 1–10 bands. Carrier positions are approximate, from <a href="https://news.usni.org/category/fleet-tracker" target="_blank" rel="noopener">USNI Fleet Tracker</a>. The Do-Not-Travel layer updates automatically from the US State Dept feed each morning. Nuclear warhead counts: <a href="${h.nuclear_src[1]}" target="_blank" rel="noopener">FAS estimates</a>.`;
+ window._map=m;window._mk=mk;
 });
 </script></body></html>

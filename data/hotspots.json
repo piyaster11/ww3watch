@@ -1,0 +1,487 @@
+{
+ "reviewed": "2026-11-01",
+ "hotspots": [
+  {
+   "id": "hormuz",
+   "name": "Strait of Hormuz",
+   "lat": 26.57,
+   "lng": 56.25,
+   "sev": 9,
+   "layer": "choke",
+   "verified": true,
+   "updated": "2026-11-01",
+   "why": "Effectively closed by Iran; 81 attacks on ships since 6 Jul, a limpet-mine attack on 29 Oct. US blockade of Iranian ports has redirected 144 ships.",
+   "src": [
+    [
+     "UKMTO via CBS live",
+     "https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/"
+    ],
+    [
+     "JINSA update 29–30 Oct",
+     "https://jinsa.org/wp-content/uploads/2026/10/Iran-War-Update-10.30.26.pdf"
+    ]
+   ],
+   "unverified": "Iran claims ~10 ships hit its mines — not independently confirmed (ISW)."
+  },
+  {
+   "id": "iran",
+   "name": "Iran — nuclear sites (Pickaxe Mtn / Natanz)",
+   "lat": 33.72,
+   "lng": 51.73,
+   "sev": 8.5,
+   "layer": "war",
+   "verified": true,
+   "updated": "2026-11-01",
+   "why": "Trump says 'one or two targets' remain incl. Pickaxe Mountain; Khamenei orders an 'unrestricted' response. Strikes possible after 3 Nov midterms.",
+   "src": [
+    [
+     "CBS live",
+     "https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/"
+    ],
+    [
+     "ISW Iran Update 31 Oct",
+     "https://understandingwar.org/research/middle-east/iran-update-october-31-2026/"
+    ]
+   ]
+  },
+  {
+   "id": "ukraine",
+   "name": "Ukraine front & Kyiv",
+   "lat": 48.3,
+   "lng": 37.0,
+   "sev": 8,
+   "layer": "war",
+   "verified": true,
+   "updated": "2026-10-31",
+   "why": "~300 Russian drones on 31 Oct; power cut to 280k homes. Kremlin keeps maximalist demands; small Kherson ceasefire holding.",
+   "src": [
+    [
+     "ISW 31 Oct",
+     "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-31-2026/"
+    ]
+   ]
+  },
+  {
+   "id": "yemen",
+   "name": "Yemen / Saudi / Bab el-Mandeb",
+   "lat": 13.5,
+   "lng": 43.6,
+   "sev": 7,
+   "layer": "war",
+   "verified": true,
+   "updated": "2026-10-30",
+   "why": "Houthi–Saudi war reignited: strike on Riyadh airport killed 14 (10–11 Oct); Houthis pushed toward Bab el-Mandeb. No new merchant-ship strike there confirmed.",
+   "src": [
+    [
+     "Crisis Group CrisisWatch Oct 2026",
+     "https://www.crisisgroup.org/sites/default/files/crisiswatch/crisiswatch-october-2026-middle-east-and-north-africa.pdf"
+    ],
+    [
+     "AP 30 Oct",
+     "https://apnews.com/article/mideast-news-october-30-2026-7f7f34ceb62f294a450e48ace0bd56e0"
+    ]
+   ]
+  },
+  {
+   "id": "lebanon",
+   "name": "Israel – Lebanon",
+   "lat": 33.27,
+   "lng": 35.4,
+   "sev": 6.5,
+   "layer": "war",
+   "verified": true,
+   "updated": "2026-10-31",
+   "why": "Israeli strikes in south Lebanon continue; Israel threatens to seize more territory if Hezbollah joins a renewed Iran war.",
+   "src": [
+    [
+     "Crisis Group CrisisWatch",
+     "https://www.crisisgroup.org/sites/default/files/crisiswatch/crisiswatch-october-2026-middle-east-and-north-africa.pdf"
+    ],
+    [
+     "L'Orient Today",
+     "https://today.lorientlejour.com/article/1550709/7-pm-recap-saudi-arabia-warns-houthis-as-israeli-strikes-hit-south-lebanon.html"
+    ]
+   ]
+  },
+  {
+   "id": "taiwan",
+   "name": "Taiwan Strait",
+   "lat": 24.2,
+   "lng": 119.6,
+   "sev": 5.5,
+   "layer": "choke",
+   "verified": true,
+   "updated": "2026-10-31",
+   "why": "Routine pressure: 13 PLA aircraft (6 crossed median line), 7 ships on 31 Oct. US Army Pacific says 2027 window 'remains valid'.",
+   "src": [
+    [
+     "Taiwan update 31 Oct",
+     "https://petersworld.org/indo-pacific-security-update-oct-31/"
+    ],
+    [
+     "UPI / Breaking Defense",
+     "https://www.upi.com/Korea-Regional-Review/Directors-Corner/National-Security-News-Commentary-2026-10-31"
+    ]
+   ]
+  },
+  {
+   "id": "scs",
+   "name": "South China Sea",
+   "lat": 15.5,
+   "lng": 115.0,
+   "sev": 4.5,
+   "layer": "choke",
+   "verified": true,
+   "updated": "2026-10-16",
+   "why": "China's Liaoning carrier group entered via the Luzon Strait, shadowed by Japan; China tested a stealth drone off an amphibious ship.",
+   "src": [
+    [
+     "USNI Western Pacific Pulse 16 Oct",
+     "https://news.usni.org/2026/10/16/usni-news-western-pacific-pulse-oct-16-2026"
+    ]
+   ]
+  },
+  {
+   "id": "baltic",
+   "name": "Baltic / Kaliningrad",
+   "lat": 54.9,
+   "lng": 20.6,
+   "sev": 4.5,
+   "layer": "choke",
+   "verified": true,
+   "updated": "2026-10-31",
+   "why": "NATO–Russia friction below clash level; Pentagon asked Baltic states to tone down rhetoric. Markets: 3.8% odds Russia invades a NATO state in 2026.",
+   "src": [
+    [
+     "Taipei Times",
+     "https://www.taipeitimes.com/News/world/archives/2026/10/31/2003866926"
+    ],
+    [
+     "Polymarket",
+     "https://polymarket.com/event/will-russia-invade-a-nato-country-in-2025"
+    ]
+   ]
+  },
+  {
+   "id": "korea",
+   "name": "Korean Peninsula",
+   "lat": 38.3,
+   "lng": 127.2,
+   "sev": 4,
+   "layer": "war",
+   "verified": true,
+   "updated": "2026-10-31",
+   "why": "North Korea rejected an 11-nation sanctions statement; US–Japan–South Korea reaffirmed denuclearization goal.",
+   "src": [
+    [
+     "Indo-Pacific update 31 Oct",
+     "https://petersworld.org/indo-pacific-security-update-oct-31/"
+    ]
+   ]
+  }
+ ],
+ "carriers": [
+  {
+   "name": "USS George Washington CSG",
+   "lat": 20.5,
+   "lng": 62.0,
+   "where": "Arabian Sea",
+   "updated": "2026-10-26",
+   "verified": true,
+   "src": [
+    [
+     "USNI Fleet Tracker 26 Oct",
+     "https://news.usni.org/2026/10/26/usni-news-fleet-and-marine-tracker-oct-26-2026"
+    ]
+   ]
+  },
+  {
+   "name": "USS George H.W. Bush CSG",
+   "lat": 18.5,
+   "lng": 64.5,
+   "where": "Arabian Sea",
+   "updated": "2026-10-26",
+   "verified": true,
+   "src": [
+    [
+     "USNI Fleet Tracker 26 Oct",
+     "https://news.usni.org/2026/10/26/usni-news-fleet-and-marine-tracker-oct-26-2026"
+    ]
+   ]
+  },
+  {
+   "name": "USS Theodore Roosevelt CSG",
+   "lat": 27.5,
+   "lng": 133.0,
+   "where": "Philippine Sea (Keen Sword 27) — reportedly heading to Middle East",
+   "updated": "2026-10-27",
+   "verified": false,
+   "src": [
+    [
+     "USNI Fleet Tracker 26 Oct",
+     "https://news.usni.org/2026/10/26/usni-news-fleet-and-marine-tracker-oct-26-2026"
+    ],
+    [
+     "TWZ: carriers 27 Oct (US officials via Fox)",
+     "https://www.twz.com/sea/where-are-the-aircraft-carriers-october-27-2026"
+    ]
+   ]
+  }
+ ],
+ "nuclear": [
+  [
+   "United States",
+   39,
+   -98,
+   5177
+  ],
+  [
+   "Russia",
+   58,
+   60,
+   5459
+  ],
+  [
+   "China",
+   35,
+   103,
+   600
+  ],
+  [
+   "France",
+   46.5,
+   2.5,
+   290
+  ],
+  [
+   "United Kingdom",
+   53,
+   -1.5,
+   225
+  ],
+  [
+   "India",
+   22,
+   79,
+   180
+  ],
+  [
+   "Pakistan",
+   30,
+   70,
+   170
+  ],
+  [
+   "Israel",
+   31.2,
+   34.9,
+   90
+  ],
+  [
+   "North Korea",
+   40.2,
+   127.3,
+   50
+  ]
+ ],
+ "nuclear_src": [
+  "FAS Status of World Nuclear Forces (estimates, 2025)",
+  "https://fas.org/initiative/status-world-nuclear-forces/"
+ ],
+ "dnt": [
+  {
+   "name": "Belarus",
+   "lat": 53.7,
+   "lng": 28,
+   "level": 4,
+   "departure": true,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.blr.html"
+  },
+  {
+   "name": "Afghanistan",
+   "lat": 33.9,
+   "lng": 67.7,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.afg.html"
+  },
+  {
+   "name": "Burkina Faso",
+   "lat": 12.2,
+   "lng": -1.6,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.bfa.html"
+  },
+  {
+   "name": "Burma",
+   "lat": 21.9,
+   "lng": 96,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mmr.html"
+  },
+  {
+   "name": "Central African Republic",
+   "lat": 6.6,
+   "lng": 20.9,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.caf.html"
+  },
+  {
+   "name": "Chad",
+   "lat": 15.5,
+   "lng": 18.7,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.tcd.html"
+  },
+  {
+   "name": "Democratic Republic of the Congo",
+   "lat": -4,
+   "lng": 21.8,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.cod.html"
+  },
+  {
+   "name": "Gaza",
+   "lat": 31.4,
+   "lng": 34.4,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.xgz.html"
+  },
+  {
+   "name": "Haiti",
+   "lat": 19,
+   "lng": -72.3,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.hti.html"
+  },
+  {
+   "name": "Iran",
+   "lat": 32.4,
+   "lng": 53.7,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.irn.html"
+  },
+  {
+   "name": "Iraq",
+   "lat": 33.2,
+   "lng": 43.7,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.irq.html"
+  },
+  {
+   "name": "Lebanon",
+   "lat": 33.9,
+   "lng": 35.9,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.lbn.html"
+  },
+  {
+   "name": "Libya",
+   "lat": 26.3,
+   "lng": 17.2,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.lby.html"
+  },
+  {
+   "name": "Mali",
+   "lat": 17.6,
+   "lng": -4,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mli.html"
+  },
+  {
+   "name": "Niger",
+   "lat": 17.6,
+   "lng": 8.1,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ner.html"
+  },
+  {
+   "name": "North Korea",
+   "lat": 40.3,
+   "lng": 127.5,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.prk.html"
+  },
+  {
+   "name": "Russia",
+   "lat": 61.5,
+   "lng": 105.3,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.rus.html"
+  },
+  {
+   "name": "Somalia",
+   "lat": 5.2,
+   "lng": 46.2,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.som.html"
+  },
+  {
+   "name": "South Sudan",
+   "lat": 6.9,
+   "lng": 31.3,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ssd.html"
+  },
+  {
+   "name": "Sudan",
+   "lat": 12.9,
+   "lng": 30.2,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.sdn.html"
+  },
+  {
+   "name": "Syria",
+   "lat": 34.8,
+   "lng": 39,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.syr.html"
+  },
+  {
+   "name": "Uganda",
+   "lat": 1.4,
+   "lng": 32.3,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.uga.html"
+  },
+  {
+   "name": "Ukraine",
+   "lat": 48.4,
+   "lng": 31.2,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ukr.html"
+  },
+  {
+   "name": "Yemen",
+   "lat": 15.6,
+   "lng": 48.5,
+   "level": 4,
+   "departure": false,
+   "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.yem.html"
+  }
+ ],
+ "dnt_missing": [],
+ "dnt_updated": "2026-11-01T11:23:32Z"
+}
