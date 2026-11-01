@@ -1,0 +1,34 @@
+{
+ "reviewed": "2026-11-01",
+ "factors": {
+  "greatpower": {"score": 7, "why": "US–Iran war (since Feb) is paused, not over: US blockade of Iranian ports continues and Trump says 'one or two targets' remain (Pickaxe Mountain) — strikes may resume after the 3 Nov midterms. Russia–NATO and China–Taiwan friction stay below direct clash.",
+   "sources": [["CBS live: Trump suggests more attacks on Iran","https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/"],["Gulf News: Khamenei warns of 'geographically unrestricted' response","https://gulfnews.com/world/mena/middle-east-conflict-trump-says-us-still-has-to-take-care-of-one-or-two-targets-in-iran-1.500731311"],["Taipei Times: US tells Baltics to cool Russia rhetoric","https://www.taipeitimes.com/News/world/archives/2026/10/31/2003866926"]]},
+  "wars": {"score": 7, "why": "Ukraine: ~300 Russian drones in one day on 31 Oct, Kremlin keeps maximalist demands (a local Kherson ceasefire is holding). Gulf: 81 attacks on ships in Hormuz since 6 Jul; Qatari LNG carrier hit 30 Oct.",
+   "sources": [["ISW: Russian Offensive Campaign Assessment, 31 Oct 2026","https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-31-2026/"],["Gulf News: Qatari gas tanker struck","https://gulfnews.com/world/mena/middle-east-conflict-trump-says-us-still-has-to-take-care-of-one-or-two-targets-in-iran-1.500731311"]]},
+  "nuclear": {"score": 7, "why": "New START expired 5 Feb 2026 — no binding US–Russia limits for the first time in decades. US has threatened to resume testing; no leader-level arms talks. Iran nuclear site still on the US target list.",
+   "sources": [["CFR: Nukes without limits after New START","https://www.cfr.org/articles/nukes-without-limits-a-new-era-after-the-end-of-new-start"],["Arms Control Association, Oct 2026","https://www.armscontrol.org/act/2026-10/focus/trump-xi-putin-failing-tackle-nuclear-threat"],["Reuters: US does not rule out underground tests","https://www.reuters.com/world/top-official-says-us-still-assessing-how-test-nuclear-weapons-2026-03-24/"]]},
+  "mobilization": {"score": 6, "why": "US naval blockade has redirected 144 ships; Iran ordered commanders to update target lists. Around Taiwan it was a 'light day' (13 PLA aircraft, 7 ships), but US Army Pacific keeps the 2027 window 'valid'.",
+   "sources": [["Investing.com: CENTCOM blockade, 144 ships","https://www.investing.com/news/economy-news/iran-offers-48hour-hormuz-reopening-plan-as-trump-signals-progress-in-talks-4989413"],["Taiwan/China update, 31 Oct","https://petersworld.org/indo-pacific-security-update-oct-31/"],["UPI/Breaking Defense: Taiwan 2027 window","https://www.upi.com/Korea-Regional-Review/Directors-Corner/National-Security-News-Commentary-2026-10-31"]]},
+  "chokepoints": {"score": 7, "why": "Strait of Hormuz effectively closed by Iran; mines reported on the Oman-coast route. Iran offers a 48-hour reopening plan only if its 7 conditions are met.",
+   "sources": [["Al Jazeera live, 1 Nov","https://www.aljazeera.com/news/liveblog/2026/11/1/iran-war-live-araghchi-says-talks-under-way-on-2-day-plan-to-reopen-hormuz"],["Israel National News: no reopening until 7 conditions","https://www.israelnationalnews.com/news/435437"]]},
+  "doomsday": {"score": 9, "why": "Bulletin of the Atomic Scientists set the Clock at 85 seconds to midnight on 27 Jan 2026 — the closest ever (89s in 2025). Updated once a year.",
+   "sources": [["Bulletin: 2026 Doomsday Clock statement","https://thebulletin.org/doomsday-clock/2026-statement/"]]}
+ },
+ "changed": [
+  ["Iran offered a 48-hour Hormuz reopening plan via Qatar — a de-escalation signal, but conditional.","https://www.investing.com/news/economy-news/iran-offers-48hour-hormuz-reopening-plan-as-trump-signals-progress-in-talks-4989413"],
+  ["Trump: US still has to 'take care of' one or two Iranian targets; Rubio says no decision yet.","https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/"],
+  ["Iran's supreme leader orders an 'immediate, geographically unrestricted' response to any attack.","https://gulfnews.com/world/mena/middle-east-conflict-trump-says-us-still-has-to-take-care-of-one-or-two-targets-in-iran-1.500731311"],
+  ["US approves 500 Patriot PAC-3 interceptors for Ukraine (delivery years away).","https://english.news.cn/20261031/008e7edef7f54e9f807b91841c2a085f/c.html"]
+ ],
+ "watch": [
+  ["Tue 3 Nov","US midterm elections — Trump has hinted at fresh Iran action after the vote.","https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/"],
+  ["4–10 Nov","Highest risk window: possible resumed US/Israeli strikes vs. Iran's 48-hour Hormuz deal.","https://www.aljazeera.com/news/liveblog/2026/11/1/iran-war-live-araghchi-says-talks-under-way-on-2-day-plan-to-reopen-hormuz"],
+  ["Daily","Ship attacks / mines in Hormuz and Gulf (UKMTO).","https://www.ukmto.org/"],
+  ["Daily","Taiwan MND PLA activity report — watch for jumps above ~30 aircraft.","https://www.mnd.gov.tw/English/"]
+ ],
+ "speculation": [
+  ["Social posts claiming a US ground invasion of Iran is imminent — no official confirmation; Iran's 'killing ground' remarks are a warning, not evidence of an invasion plan.","https://www.aljazeera.com/news/liveblog/2026/11/1/iran-war-live-araghchi-says-talks-under-way-on-2-day-plan-to-reopen-hormuz"],
+  ["Iran's claims that ~10 ships hit mines are largely unverified by independent sources.","https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/"],
+  ["Reports that China and Russia would 'guarantee' a US–Iran deal come from a single unnamed-source report.","https://www.israelnationalnews.com/news/435437"]
+ ]
+}

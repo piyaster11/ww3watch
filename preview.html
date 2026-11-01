@@ -1,0 +1,93 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PREVIEW · BRINK — How close are we to WW3?</title><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☢️</text></svg>">
+<style>
+:root{--r:#ff2a2a;--bg:#050506;--p:#0e0e11;--ln:#24242a;--t:#e8e6e3;--m:#8a8790}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#2a0505 0%,var(--bg) 55%);color:var(--t);font:15px/1.5 "Inter",system-ui,sans-serif;min-height:100vh}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px);z-index:9}
+a{color:#ff8a8a;text-decoration:none}a:hover{text-decoration:underline}
+.w{max-width:1100px;margin:0 auto;padding:20px}
+.pv{background:#ffcc00;color:#000;text-align:center;font:700 12px monospace;padding:4px}
+header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ln);padding-bottom:10px}
+.logo{font:900 30px/1 "Courier New",monospace;letter-spacing:8px;color:var(--r);text-shadow:0 0 18px rgba(255,42,42,.7)}
+.logo small{display:block;font-size:11px;letter-spacing:3px;color:var(--m);margin-top:4px;text-shadow:none}
+.live{font:12px monospace;color:var(--m)}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--r);margin-right:6px;animation:b 1s infinite}
+@keyframes b{50%{opacity:.15}}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center;margin:26px 0}
+.gw{position:relative;aspect-ratio:1;max-width:440px;margin:auto;width:100%}
+.radar{position:absolute;inset:6%;border-radius:50%;background:conic-gradient(from 0deg,rgba(255,42,42,.35),transparent 18%);animation:s 4s linear infinite;mask:radial-gradient(circle,#000 69%,transparent 70%)}
+@keyframes s{to{transform:rotate(360deg)}}
+.gw svg{position:absolute;inset:0;filter:drop-shadow(0 0 14px rgba(255,42,42,.45))}
+.num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.num b{font:900 110px/1 "Courier New",monospace;color:#fff;text-shadow:0 0 30px var(--r),0 0 60px var(--r)}
+.num span{font:700 13px monospace;letter-spacing:4px;color:var(--m)}
+.band{font:900 34px monospace;letter-spacing:10px;color:var(--r);text-shadow:0 0 20px rgba(255,42,42,.8);animation:b 2.4s infinite}
+.scale{display:flex;gap:3px;margin:14px 0 6px}.scale div{flex:1;height:10px;border-radius:2px;opacity:.25}.scale div.on{opacity:1;box-shadow:0 0 8px currentColor}
+.sl{display:flex;justify-content:space-between;font:11px monospace;color:var(--m)}
+.verdict{font-size:17px;margin:14px 0}
+.card{background:linear-gradient(180deg,var(--p),#09090b);border:1px solid var(--ln);border-radius:10px;padding:18px;margin:18px 0}
+h2{font:700 13px monospace;letter-spacing:4px;color:var(--r);margin:0 0 12px;text-transform:uppercase}
+.f{display:grid;grid-template-columns:230px 1fr 52px;gap:14px;padding:12px 0;border-top:1px solid var(--ln);align-items:start}
+.f:first-of-type{border-top:0}.fn{font-weight:700}.fn small{display:block;color:var(--m);font:11px monospace;margin-top:2px}
+.bar{height:6px;background:#1c1c20;border-radius:3px;margin:6px 0 8px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#ff8a00,var(--r));box-shadow:0 0 8px var(--r)}
+.fs{font:900 24px monospace;text-align:right}.why{font-size:14px;color:#cfcbd2}
+.src{font-size:12px;margin-top:4px}.src a{margin-right:10px;white-space:nowrap}
+.rows{font:12px monospace;color:var(--m);margin-top:4px}.rows a{color:#ff8a8a}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+ul{margin:0;padding-left:18px}li{margin:6px 0}
+.tag{font:700 10px monospace;padding:2px 6px;border-radius:3px;margin-right:6px}
+.v{background:#123d2a;color:#5be3a0}.s{background:#3d2a12;color:#ffb35b}
+.wt{display:grid;grid-template-columns:80px 1fr;gap:10px;padding:6px 0;border-top:1px dashed var(--ln)}.wt b{color:var(--r);font:700 12px monospace}
+.do li{margin:8px 0}.foot{font-size:12px;color:var(--m)}
+@media(max-width:760px){.hero,.g2{grid-template-columns:1fr}.f{grid-template-columns:1fr 46px}.f .why{grid-column:1/-1}.num b{font-size:80px}.logo{font-size:22px;letter-spacing:5px}}
+</style></head><body>
+<div class="pv">PREVIEW — not live yet</div>
+<div class="w">
+<header><div class="logo">B R I N K<small>HOW CLOSE ARE WE TO WORLD WAR III?</small></div><div class="live"><span class="dot"></span><span id="upd">loading…</span></div></header>
+<section class="hero">
+ <div class="gw"><div class="radar"></div><svg viewBox="0 0 200 200" id="g"></svg><div class="num"><b id="sc">–</b><span>OUT OF 10</span></div></div>
+ <div><div class="band" id="band">…</div>
+  <div class="scale" id="scale"></div><div class="sl"><span>1 CALM</span><span>TENSE</span><span>ELEVATED</span><span>DANGER</span><span>10 BRINK</span></div>
+  <p class="verdict" id="verdict"></p><p class="foot" id="delta"></p></div>
+</section>
+<div class="card"><h2>⚠ The 9 signals</h2><div id="factors"></div></div>
+<div class="g2">
+ <div class="card"><h2>What changed</h2><ul id="changed"></ul></div>
+ <div class="card"><h2>What to watch this week</h2><div id="watch"></div></div>
+</div>
+<div class="card"><h2>Verified vs. speculation</h2><p class="foot">Every scored signal above comes from official sources, wire reporting or live market data. These circulating claims are <b>not</b> scored:</p><ul id="spec"></ul></div>
+<div class="card do"><h2>What should a normal person do?</h2><ul>
+<li><b>Don't panic-sell or panic-buy.</b> Markets price war risk faster than you can trade it. Stick to your plan.</li>
+<li><b>Expect higher fuel and travel costs</b> while Hormuz stays closed — budget for it, and check flights through the Gulf before you book.</li>
+<li><b>Travelling?</b> Check your government's advisory and register with your embassy (Thai MFA: <a href="https://www.mfa.go.th/en/">mfa.go.th</a>, US: <a href="https://travel.state.gov/">travel.state.gov</a>).</li>
+<li><b>Keep a basic 72-hour kit</b> (water, cash, medicine, power bank) — useful for floods and blackouts too.</li>
+<li><b>Check before you share.</b> Most "WW3 tonight" posts are recycled or fake.</li></ul></div>
+<div class="card"><h2>Methodology</h2><p class="foot">Nine signals are each scored 1–10 and combined by weight (shown on each row). <b>Live</b> signals refresh automatically every day at ~07:00 Bangkok: <i>Prediction markets</i> = combined Polymarket odds of five major escalation events (0% → 1, 40%+ → 10); <i>Market fear</i> = average 1-year percentile of VIX, gold, Brent and the ITA defense ETF (Yahoo Finance); <i>Travel bans</i> = count of US State Dept Level-4 countries above a chronic baseline of ~18, plus embassy departures. <b>Curated</b> signals are scored by an analyst from linked reporting and dated. Bands: 1–2.4 Calm · 2.5–4.4 Tense · 4.5–6.4 Elevated · 6.5–8.4 Danger · 8.5–10 Brink. If a live source fails, its last value is kept and marked stale.</p>
+<p class="foot"><b>Disclaimer:</b> BRINK is an independent, unofficial gauge for awareness only. It is not a prediction, not the US DEFCON system, and not investment advice. Free data only. A Piyaster 99/99 project.</p></div>
+</div>
+<script>
+const C=s=>s<2.5?'#3ddc84':s<4.5?'#c6e14b':s<6.5?'#ffb020':s<8.5?'#ff5a1f':'#ff1a1a';
+const e=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const bkk=t=>new Date(t).toLocaleString('en-GB',{timeZone:'Asia/Bangkok',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})+' BKK';
+fetch('data/brink.json?'+Date.now()).then(r=>r.json()).then(d=>{
+ upd.textContent='UPDATED '+bkk(d.updated);
+ const s=d.score,a0=135,sweep=270,ang=a0+sweep*(s-1)/9;
+ const P=(a,r)=>[100+r*Math.cos(a*Math.PI/180),100+r*Math.sin(a*Math.PI/180)];
+ let svg='';for(let i=0;i<=90;i++){const v=1+i/10,a=a0+sweep*i/90,[x1,y1]=P(a,88),[x2,y2]=P(a,i%10?82:76);svg+=`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${v<=s?C(v):'#2a2a30'}" stroke-width="${i%10?1.4:2.4}"/>`}
+ for(let n=1;n<=10;n++){const[x,y]=P(a0+sweep*(n-1)/9,66);svg+=`<text x="${x}" y="${y+3}" fill="#8a8790" font-size="8" text-anchor="middle" font-family="monospace">${n}</text>`}
+ const[nx,ny]=P(ang,92);svg+=`<circle cx="${nx}" cy="${ny}" r="4" fill="#fff" style="filter:drop-shadow(0 0 6px red)"/>`;g.innerHTML=svg;
+ let k=1;const t=setInterval(()=>{k=Math.min(s,k+.1);sc.textContent=k.toFixed(1);if(k>=s)clearInterval(t)},25);
+ band.textContent=d.band;band.style.color=C(s);
+ scale.innerHTML=[...Array(10)].map((_,i)=>`<div class="${i+1<=Math.round(s)?'on':''}" style="background:${C(i+1)};color:${C(i+1)}"></div>`).join('');
+ const top=[...d.factors].sort((a,b)=>b.score*b.weight-a.score*a.weight).slice(0,2).map(f=>f.name.toLowerCase());
+ verdict.innerHTML=`<b>${s} / 10 — ${d.band}.</b> The world is not at WW3, but it is closer than at almost any point in decades. Biggest drivers: ${top.join(' and ')}. The next fork is the week after the US midterms (4–10 Nov).`;
+ delta.textContent=d.prev_score&&d.prev_score!=s?`Yesterday: ${d.prev_score} (${s>d.prev_score?'▲':'▼'} ${Math.abs(s-d.prev_score).toFixed(1)})`:'Curated signals reviewed '+d.reviewed+'.';
+ factors.innerHTML=d.factors.map(f=>{
+  const src=(f.sources||[]).map(x=>`<a href="${e(x[1])}" target="_blank" rel="noopener">↗ ${e(x[0])}</a>`).join('');
+  const rows=(f.rows||[]).slice(0,6).map(r=>`<a href="${e(r.link)}" target="_blank" rel="noopener">${e(r.label)}</a>${r.p!=null?' '+r.p+'%':r.pct!=null?' '+r.v+' ('+r.pct+'th pct)':r.departure?' ⚑ departure':' L'+r.level}`).join(' · ');
+  return `<div class="f"><div class="fn">${e(f.name)}<small>${f.kind.toUpperCase()}${f.stale?' · STALE':''} · weight ${Math.round(f.weight*100)}%</small><div class="bar"><i style="width:${f.score*10}%;background:${C(f.score)}"></i></div></div>
+  <div class="why">${e(f.why)}${src?`<div class="src">${src}</div>`:''}${rows?`<div class="rows">${rows}</div>`:''}</div><div class="fs" style="color:${C(f.score)}">${f.score}</div></div>`}).join('');
+ changed.innerHTML=d.changed.map(x=>`<li><span class="tag v">VERIFIED</span>${e(x[0])} <a href="${e(x[1])}" target="_blank" rel="noopener">source ↗</a></li>`).join('');
+ watch.innerHTML=d.watch.map(x=>`<div class="wt"><b>${e(x[0])}</b><div>${e(x[1])} <a href="${e(x[2])}" target="_blank" rel="noopener">↗</a></div></div>`).join('');
+ spec.innerHTML=d.speculation.map(x=>`<li><span class="tag s">UNVERIFIED</span>${e(x[0])} <a href="${e(x[1])}" target="_blank" rel="noopener">context ↗</a></li>`).join('');
+});
+</script></body></html>

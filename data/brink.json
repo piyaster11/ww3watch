@@ -1,0 +1,422 @@
+{
+ "updated": "2026-11-01T10:31:00Z",
+ "score": 6.6,
+ "band": "DANGER",
+ "factors": [
+  {
+   "id": "greatpower",
+   "name": "Great-power confrontation",
+   "weight": 0.22,
+   "score": 7,
+   "why": "US–Iran war (since Feb) is paused, not over: US blockade of Iranian ports continues and Trump says 'one or two targets' remain (Pickaxe Mountain) — strikes may resume after the 3 Nov midterms. Russia–NATO and China–Taiwan friction stay below direct clash.",
+   "sources": [
+    [
+     "CBS live: Trump suggests more attacks on Iran",
+     "https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/"
+    ],
+    [
+     "Gulf News: Khamenei warns of 'geographically unrestricted' response",
+     "https://gulfnews.com/world/mena/middle-east-conflict-trump-says-us-still-has-to-take-care-of-one-or-two-targets-in-iran-1.500731311"
+    ],
+    [
+     "Taipei Times: US tells Baltics to cool Russia rhetoric",
+     "https://www.taipeitimes.com/News/world/archives/2026/10/31/2003866926"
+    ]
+   ],
+   "kind": "curated",
+   "asof": "2026-11-01"
+  },
+  {
+   "id": "wars",
+   "name": "Active wars intensity",
+   "weight": 0.14,
+   "score": 7,
+   "why": "Ukraine: ~300 Russian drones in one day on 31 Oct, Kremlin keeps maximalist demands (a local Kherson ceasefire is holding). Gulf: 81 attacks on ships in Hormuz since 6 Jul; Qatari LNG carrier hit 30 Oct.",
+   "sources": [
+    [
+     "ISW: Russian Offensive Campaign Assessment, 31 Oct 2026",
+     "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-31-2026/"
+    ],
+    [
+     "Gulf News: Qatari gas tanker struck",
+     "https://gulfnews.com/world/mena/middle-east-conflict-trump-says-us-still-has-to-take-care-of-one-or-two-targets-in-iran-1.500731311"
+    ]
+   ],
+   "kind": "curated",
+   "asof": "2026-11-01"
+  },
+  {
+   "id": "nuclear",
+   "name": "Nuclear posture & arms control",
+   "weight": 0.15,
+   "score": 7,
+   "why": "New START expired 5 Feb 2026 — no binding US–Russia limits for the first time in decades. US has threatened to resume testing; no leader-level arms talks. Iran nuclear site still on the US target list.",
+   "sources": [
+    [
+     "CFR: Nukes without limits after New START",
+     "https://www.cfr.org/articles/nukes-without-limits-a-new-era-after-the-end-of-new-start"
+    ],
+    [
+     "Arms Control Association, Oct 2026",
+     "https://www.armscontrol.org/act/2026-10/focus/trump-xi-putin-failing-tackle-nuclear-threat"
+    ],
+    [
+     "Reuters: US does not rule out underground tests",
+     "https://www.reuters.com/world/top-official-says-us-still-assessing-how-test-nuclear-weapons-2026-03-24/"
+    ]
+   ],
+   "kind": "curated",
+   "asof": "2026-11-01"
+  },
+  {
+   "id": "mobilization",
+   "name": "Military mobilization",
+   "weight": 0.09,
+   "score": 6,
+   "why": "US naval blockade has redirected 144 ships; Iran ordered commanders to update target lists. Around Taiwan it was a 'light day' (13 PLA aircraft, 7 ships), but US Army Pacific keeps the 2027 window 'valid'.",
+   "sources": [
+    [
+     "Investing.com: CENTCOM blockade, 144 ships",
+     "https://www.investing.com/news/economy-news/iran-offers-48hour-hormuz-reopening-plan-as-trump-signals-progress-in-talks-4989413"
+    ],
+    [
+     "Taiwan/China update, 31 Oct",
+     "https://petersworld.org/indo-pacific-security-update-oct-31/"
+    ],
+    [
+     "UPI/Breaking Defense: Taiwan 2027 window",
+     "https://www.upi.com/Korea-Regional-Review/Directors-Corner/National-Security-News-Commentary-2026-10-31"
+    ]
+   ],
+   "kind": "curated",
+   "asof": "2026-11-01"
+  },
+  {
+   "id": "chokepoints",
+   "name": "Airspace & sea-lane closures",
+   "weight": 0.08,
+   "score": 7,
+   "why": "Strait of Hormuz effectively closed by Iran; mines reported on the Oman-coast route. Iran offers a 48-hour reopening plan only if its 7 conditions are met.",
+   "sources": [
+    [
+     "Al Jazeera live, 1 Nov",
+     "https://www.aljazeera.com/news/liveblog/2026/11/1/iran-war-live-araghchi-says-talks-under-way-on-2-day-plan-to-reopen-hormuz"
+    ],
+    [
+     "Israel National News: no reopening until 7 conditions",
+     "https://www.israelnationalnews.com/news/435437"
+    ]
+   ],
+   "kind": "curated",
+   "asof": "2026-11-01"
+  },
+  {
+   "id": "advisories",
+   "name": "Embassy evacuations & travel bans",
+   "weight": 0.07,
+   "score": 4.9,
+   "why": "24 Level-4 \"Do Not Travel\" countries, 1 with ordered/authorized embassy departures",
+   "rows": [
+    {
+     "label": "Belarus",
+     "level": 4,
+     "departure": true,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.blr.html"
+    },
+    {
+     "label": "Afghanistan",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.afg.html"
+    },
+    {
+     "label": "Burkina Faso",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.bfa.html"
+    },
+    {
+     "label": "Burma",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mmr.html"
+    },
+    {
+     "label": "Central African Republic",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.caf.html"
+    },
+    {
+     "label": "Chad",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.tcd.html"
+    },
+    {
+     "label": "Democratic Republic of the Congo",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.cod.html"
+    },
+    {
+     "label": "Gaza",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.xgz.html"
+    },
+    {
+     "label": "Haiti",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.hti.html"
+    },
+    {
+     "label": "Iran",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.irn.html"
+    },
+    {
+     "label": "Iraq",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.irq.html"
+    },
+    {
+     "label": "Lebanon",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.lbn.html"
+    },
+    {
+     "label": "Libya",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.lby.html"
+    },
+    {
+     "label": "Mali",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mli.html"
+    },
+    {
+     "label": "Niger",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ner.html"
+    },
+    {
+     "label": "North Korea",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.prk.html"
+    },
+    {
+     "label": "Russia",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.rus.html"
+    },
+    {
+     "label": "Somalia",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.som.html"
+    },
+    {
+     "label": "South Sudan",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ssd.html"
+    },
+    {
+     "label": "Sudan",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.sdn.html"
+    },
+    {
+     "label": "Syria",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.syr.html"
+    },
+    {
+     "label": "Uganda",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.uga.html"
+    },
+    {
+     "label": "Ukraine",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ukr.html"
+    },
+    {
+     "label": "Yemen",
+     "level": 4,
+     "departure": false,
+     "link": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.yem.html"
+    }
+   ],
+   "kind": "live",
+   "asof": "2026-11-01T10:31:00Z"
+  },
+  {
+   "id": "markets",
+   "name": "Prediction markets",
+   "weight": 0.1,
+   "score": 5.1,
+   "why": "Combined odds of 5 major escalation events: 18.3%",
+   "rows": [
+    {
+     "label": "US–Iran ceasefire breaks before midterms",
+     "p": 5.5,
+     "link": "https://polymarket.com/event/us-iran-ceasefire-continues-through-the-midterms"
+    },
+    {
+     "label": "China invades Taiwan in 2026",
+     "p": 1.8,
+     "link": "https://polymarket.com/event/will-china-invade-taiwan-before-2027"
+    },
+    {
+     "label": "Russia invades a NATO country in 2026",
+     "p": 3.8,
+     "link": "https://polymarket.com/event/will-russia-invade-a-nato-country-in-2025"
+    },
+    {
+     "label": "NATO/EU troops fighting in Ukraine in 2026",
+     "p": 3.2,
+     "link": "https://polymarket.com/event/natoeu-troops-fighting-in-ukraine-in-2025"
+    },
+    {
+     "label": "Iran gets a nuke before 2027",
+     "p": 4.0,
+     "link": "https://polymarket.com/event/iran-nuke-before-2027"
+    }
+   ],
+   "kind": "live",
+   "asof": "2026-11-01T10:31:00Z"
+  },
+  {
+   "id": "fear",
+   "name": "Market fear (VIX, gold, oil, defense)",
+   "weight": 0.08,
+   "score": 5.4,
+   "why": "Average 1-year percentile of fear assets: 48%",
+   "rows": [
+    {
+     "label": "VIX fear index",
+     "v": 19.42,
+     "pct": 78,
+     "link": "https://finance.yahoo.com/quote/%5EVIX"
+    },
+    {
+     "label": "Gold",
+     "v": 3898.9,
+     "pct": 0,
+     "link": "https://finance.yahoo.com/quote/GC%3DF"
+    },
+    {
+     "label": "Brent oil",
+     "v": 113.43,
+     "pct": 96,
+     "link": "https://finance.yahoo.com/quote/BZ%3DF"
+    },
+    {
+     "label": "US defense stocks (ITA)",
+     "v": 209.74,
+     "pct": 21,
+     "link": "https://finance.yahoo.com/quote/ITA"
+    }
+   ],
+   "kind": "live",
+   "asof": "2026-11-01T10:31:00Z"
+  },
+  {
+   "id": "doomsday",
+   "name": "Doomsday Clock",
+   "weight": 0.07,
+   "score": 9,
+   "why": "Bulletin of the Atomic Scientists set the Clock at 85 seconds to midnight on 27 Jan 2026 — the closest ever (89s in 2025). Updated once a year.",
+   "sources": [
+    [
+     "Bulletin: 2026 Doomsday Clock statement",
+     "https://thebulletin.org/doomsday-clock/2026-statement/"
+    ]
+   ],
+   "kind": "curated",
+   "asof": "2026-11-01"
+  }
+ ],
+ "changed": [
+  [
+   "Iran offered a 48-hour Hormuz reopening plan via Qatar — a de-escalation signal, but conditional.",
+   "https://www.investing.com/news/economy-news/iran-offers-48hour-hormuz-reopening-plan-as-trump-signals-progress-in-talks-4989413"
+  ],
+  [
+   "Trump: US still has to 'take care of' one or two Iranian targets; Rubio says no decision yet.",
+   "https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/"
+  ],
+  [
+   "Iran's supreme leader orders an 'immediate, geographically unrestricted' response to any attack.",
+   "https://gulfnews.com/world/mena/middle-east-conflict-trump-says-us-still-has-to-take-care-of-one-or-two-targets-in-iran-1.500731311"
+  ],
+  [
+   "US approves 500 Patriot PAC-3 interceptors for Ukraine (delivery years away).",
+   "https://english.news.cn/20261031/008e7edef7f54e9f807b91841c2a085f/c.html"
+  ]
+ ],
+ "watch": [
+  [
+   "Tue 3 Nov",
+   "US midterm elections — Trump has hinted at fresh Iran action after the vote.",
+   "https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/"
+  ],
+  [
+   "4–10 Nov",
+   "Highest risk window: possible resumed US/Israeli strikes vs. Iran's 48-hour Hormuz deal.",
+   "https://www.aljazeera.com/news/liveblog/2026/11/1/iran-war-live-araghchi-says-talks-under-way-on-2-day-plan-to-reopen-hormuz"
+  ],
+  [
+   "Daily",
+   "Ship attacks / mines in Hormuz and Gulf (UKMTO).",
+   "https://www.ukmto.org/"
+  ],
+  [
+   "Daily",
+   "Taiwan MND PLA activity report — watch for jumps above ~30 aircraft.",
+   "https://www.mnd.gov.tw/English/"
+  ]
+ ],
+ "speculation": [
+  [
+   "Social posts claiming a US ground invasion of Iran is imminent — no official confirmation; Iran's 'killing ground' remarks are a warning, not evidence of an invasion plan.",
+   "https://www.aljazeera.com/news/liveblog/2026/11/1/iran-war-live-araghchi-says-talks-under-way-on-2-day-plan-to-reopen-hormuz"
+  ],
+  [
+   "Iran's claims that ~10 ships hit mines are largely unverified by independent sources.",
+   "https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/"
+  ],
+  [
+   "Reports that China and Russia would 'guarantee' a US–Iran deal come from a single unnamed-source report.",
+   "https://www.israelnationalnews.com/news/435437"
+  ]
+ ],
+ "reviewed": "2026-11-01",
+ "status": {
+  "Embassy evacuations & travel bans": "ok",
+  "Prediction markets": "ok",
+  "Market fear (VIX, gold, oil, defense)": "ok"
+ },
+ "history": [
+  [
+   "2026-11-01",
+   6.6
+  ]
+ ],
+ "prev_score": 6.8
+}
