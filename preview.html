@@ -145,7 +145,7 @@ fetch('data/brink_history.json?'+Date.now()).then(r=>r.json()).then(h=>{
 fetch('data/hotspots.json?'+Date.now()).then(r=>r.json()).then(h=>{
  const m=L.map('map',{worldCopyJump:true,zoomSnap:.5,scrollWheelZoom:false}).setView([28,60],2);
  m.attributionControl.addAttribution('Borders: <a href="https://github.com/topojson/world-atlas" target="_blank">world-atlas</a> / Natural Earth');
- fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(r=>r.json()).then(w=>{L.geoJSON(topojson.feature(w,w.objects.countries),{interactive:false,style:{color:'#3a1414',weight:.8,fillColor:'#141418',fillOpacity:1}}).addTo(m).bringToBack()});
+ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(r=>r.json()).then(w=>{L.geoJSON(topojson.feature(w,w.objects.countries),{interactive:false,style:{color:'#5a1c1c',weight:.7,fillColor:'#1a1a20',fillOpacity:1}}).addTo(m)});
  L.rectangle([[-85,-540],[85,540]],{interactive:false,stroke:false,fillColor:'#07070a',fillOpacity:1}).addTo(m);
  const lk=s=>(s||[]).map(x=>`<a href="${e(x[1])}" target="_blank" rel="noopener">↗ ${e(x[0])}</a>`).join('');
  const G={war:L.layerGroup(),choke:L.layerGroup(),carriers:L.layerGroup(),nuclear:L.layerGroup(),dnt:L.layerGroup()};
