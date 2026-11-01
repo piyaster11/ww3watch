@@ -14,7 +14,7 @@ header{display:flex;justify-content:space-between;align-items:center;border-bott
 @keyframes b{50%{opacity:.15}}
 .hero{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center;margin:26px 0}
 .gw{position:relative;aspect-ratio:1;max-width:440px;margin:auto;width:100%}
-.radar{position:absolute;inset:6%;border-radius:50%;background:conic-gradient(from 0deg,rgba(255,42,42,.35),transparent 18%);animation:s 4s linear infinite;mask:radial-gradient(circle,#000 69%,transparent 70%)}
+.radar{position:absolute;inset:6%;border-radius:50%;background:conic-gradient(from 0deg,rgba(255,42,42,.16),transparent 22%);animation:s 4s linear infinite;mask:radial-gradient(circle,#000 69%,transparent 70%)}
 @keyframes s{to{transform:rotate(360deg)}}
 .gw svg{position:absolute;inset:0;filter:drop-shadow(0 0 14px rgba(255,42,42,.45))}
 .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
@@ -29,8 +29,8 @@ h2{font:700 13px monospace;letter-spacing:4px;color:var(--r);margin:0 0 12px;tex
 .f{display:grid;grid-template-columns:230px 1fr 52px;gap:14px;padding:12px 0;border-top:1px solid var(--ln);align-items:start}
 .f:first-of-type{border-top:0}.fn{font-weight:700}.fn small{display:block;color:var(--m);font:11px monospace;margin-top:2px}
 .bar{height:6px;background:#1c1c20;border-radius:3px;margin:6px 0 8px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#ff8a00,var(--r));box-shadow:0 0 8px var(--r)}
-.fs{font:900 24px monospace;text-align:right}.why{font-size:14px;color:#cfcbd2}
-.src{font-size:12px;margin-top:4px}.src a{margin-right:10px;white-space:nowrap}
+.fs{font:900 24px monospace;text-align:right}.why{font-size:14px;color:#cfcbd2;min-width:0;overflow-wrap:anywhere}
+.src{font-size:12px;margin-top:4px}.src a{margin-right:10px;display:inline-block}
 .rows{font:12px monospace;color:var(--m);margin-top:4px}.rows a{color:#ff8a8a}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 ul{margin:0;padding-left:18px}li{margin:6px 0}
