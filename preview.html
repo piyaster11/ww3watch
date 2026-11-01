@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PREVIEW · BRINK — How close are we to WW3?</title><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☢️</text></svg>">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 <style>
 :root{--r:#ff2a2a;--bg:#050506;--p:#0e0e11;--ln:#24242a;--t:#e8e6e3;--m:#8a8790}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#2a0505 0%,var(--bg) 55%);color:var(--t);font:15px/1.5 "Inter",system-ui,sans-serif;min-height:100vh}
@@ -46,7 +46,7 @@ ul{margin:0;padding-left:18px}li{margin:6px 0}
 .lg{font:11px monospace;color:var(--m);margin-top:8px}.lg i{display:inline-block;width:18px;height:0;border-top:2px solid var(--r);vertical-align:middle;margin:0 4px 0 12px}
 .mw{display:grid;grid-template-columns:1fr 300px;gap:14px}#map{height:460px;border-radius:8px;border:1px solid var(--ln);background:#000}
 .leaflet-container{background:#050506;font:13px Inter,system-ui,sans-serif}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#0b0b0e;color:var(--t);border:1px solid var(--r);box-shadow:0 0 18px rgba(255,42,42,.45)}
-.leaflet-popup-content{margin:12px 14px;max-width:270px}.pp b{font-size:14px}.pp .sv{font:900 12px monospace}.pp p{margin:6px 0;font-size:13px;color:#cfcbd2}.pp a{display:block;font-size:12px}
+.leaflet-popup-content{margin:12px 14px;max-width:270px}.pp b{font-size:14px}.pp .sv{font:900 12px monospace}.pp p{margin:6px 0;font-size:13px;color:#cfcbd2}.pp a,.leaflet-container .pp a{display:block;font-size:12px;color:#ff8a8a}
 .pin{border-radius:50%;position:relative}.pin:after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid currentColor;animation:pl 1.8s ease-out infinite}
 @keyframes pl{from{transform:scale(.5);opacity:.9}to{transform:scale(2.2);opacity:0}}
 .lyr{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;font:12px monospace}.lyr label{border:1px solid var(--ln);padding:4px 9px;border-radius:4px;cursor:pointer;background:#0b0b0e}
@@ -143,8 +143,10 @@ fetch('data/brink_history.json?'+Date.now()).then(r=>r.json()).then(h=>{
 });
 
 fetch('data/hotspots.json?'+Date.now()).then(r=>r.json()).then(h=>{
- const m=L.map('map',{worldCopyJump:true,zoomSnap:.5,scrollWheelZoom:false}).setView([28,45],2.5);
- L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',subdomains:'abcd',maxZoom:8}).addTo(m);
+ const m=L.map('map',{worldCopyJump:true,zoomSnap:.5,scrollWheelZoom:false}).setView([28,60],2);
+ m.attributionControl.addAttribution('Borders: <a href="https://github.com/topojson/world-atlas" target="_blank">world-atlas</a> / Natural Earth');
+ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(r=>r.json()).then(w=>{L.geoJSON(topojson.feature(w,w.objects.countries),{interactive:false,style:{color:'#3a1414',weight:.8,fillColor:'#141418',fillOpacity:1}}).addTo(m).bringToBack()});
+ L.rectangle([[-85,-540],[85,540]],{interactive:false,stroke:false,fillColor:'#07070a',fillOpacity:1}).addTo(m);
  const lk=s=>(s||[]).map(x=>`<a href="${e(x[1])}" target="_blank" rel="noopener">↗ ${e(x[0])}</a>`).join('');
  const G={war:L.layerGroup(),choke:L.layerGroup(),carriers:L.layerGroup(),nuclear:L.layerGroup(),dnt:L.layerGroup()};
  const mk={};
