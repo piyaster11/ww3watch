@@ -7,7 +7,7 @@ import json, os, re, urllib.request, xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 D = os.path.join(os.path.dirname(__file__), '..', 'data')
 OUT = os.path.join(D, 'brink.json')
-UA = {'User-Agent': 'Mozilla/5.0 (ww3brink)'}
+UA = {'User-Agent': 'Mozilla/5.0 (ww3watch)'}
 NOW = datetime.now(timezone.utc)
 def get(u, t=25):
     with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=t) as r: return r.read()
