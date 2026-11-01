@@ -1,0 +1,557 @@
+{
+"points": [
+{
+"date": "2026-10-02",
+"score": 6.6,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 6,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 4.0
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-03",
+"score": 6.6,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 6,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 4.0
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-04",
+"score": 6.6,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 6,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 4.0
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-05",
+"score": 6.6,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 6,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 3.9
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-06",
+"score": 6.6,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 3.9
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-07",
+"score": 6.6,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 3.6
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-08",
+"score": 6.7,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 4.0
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-09",
+"score": 6.7,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 4.0
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-10",
+"score": 6.7,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 4.0
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-11",
+"score": 6.7,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 4.0
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-12",
+"score": 6.7,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 4.2
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-13",
+"score": 6.6,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 9.6,
+"fear": 4.1
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-14",
+"score": 6.6,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 9.3,
+"fear": 4.6
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-15",
+"score": 6.6,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 9.3,
+"fear": 4.7
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-16",
+"score": 6.8,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 6.0
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-17",
+"score": 6.8,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 6.0
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-18",
+"score": 6.8,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 6.0
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-19",
+"score": 6.7,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 8.8,
+"fear": 5.5
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-20",
+"score": 6.6,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 9.0,
+"fear": 5.0
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-21",
+"score": 6.5,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 8.3,
+"fear": 4.8
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-22",
+"score": 6.6,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 8.3,
+"fear": 5.3
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-23",
+"score": 6.6,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 8.3,
+"fear": 5.1
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-24",
+"score": 6.7,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 5.1
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-25",
+"score": 6.7,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 9.1,
+"fear": 5.1
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-26",
+"score": 6.7,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 9.1,
+"fear": 5.2
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-27",
+"score": 6.6,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 9.0,
+"fear": 5.0
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-28",
+"score": 6.4,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 6,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 5,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 6.7,
+"fear": 4.8
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-29",
+"score": 6.7,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 7,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 6,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 6.7,
+"fear": 5.1
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-30",
+"score": 7.1,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 7,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 6,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 5.4
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-10-31",
+"score": 7.1,
+"mode": "reconstructed",
+"factors": {
+"greatpower": 7,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 6,
+"chokepoints": 7,
+"doomsday": 9,
+"advisories": 4.9,
+"markets": 10.0,
+"fear": 5.4
+},
+"notes": "advisories carried from 2026-11-01 (feed undated)"
+},
+{
+"date": "2026-11-01",
+"score": 6.6,
+"mode": "live",
+"factors": {
+"greatpower": 7,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 6,
+"chokepoints": 7,
+"advisories": 4.9,
+"markets": 5.1,
+"fear": 5.4,
+"doomsday": 9
+}
+}
+],
+"events": [
+[
+"2026-10-04",
+"1,900+ Russian drones in a week",
+"https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-4-2026/"
+],
+[
+"2026-10-22",
+"Massive Russian strike on Kyiv after Witkoff–Putin talks",
+"https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-22-2026/"
+],
+[
+"2026-10-27",
+"Kherson local ceasefire starts",
+"https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-31-2026/"
+],
+[
+"2026-10-29",
+"CENTCOM options briefing; first limpet-mine attack since 2019",
+"https://jinsa.org/wp-content/uploads/2026/10/Iran-War-Update-10.30.26.pdf"
+],
+[
+"2026-10-31",
+"Trump: 'one or two targets' left; Khamenei threat",
+"https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/"
+]
+]
+}

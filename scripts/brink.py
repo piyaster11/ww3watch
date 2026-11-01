@@ -19,13 +19,9 @@ clamp = lambda x: max(1.0, min(10.0, x))
 status = {}
 
 # --- prediction markets: risk-event probabilities (YES = bad outcome unless inverted) ---
-MARKETS = [  # slug, label, invert (True if YES is the safe outcome)
- ('us-iran-ceasefire-continues-through-the-midterms', 'US–Iran ceasefire breaks before midterms', True),
- ('will-china-invade-taiwan-before-2027', 'China invades Taiwan in 2026', False),
- ('will-russia-invade-a-nato-country-in-2025', 'Russia invades a NATO country in 2026', False),
- ('natoeu-troops-fighting-in-ukraine-in-2025', 'NATO/EU troops fighting in Ukraine in 2026', False),
- ('iran-nuke-before-2027', 'Iran gets a nuke before 2027', False),
-]
+import sys; sys.path.insert(0, os.path.dirname(__file__))
+from brink_markets import MARKETS
+import history
 def markets():
     out = []
     for slug, label, inv in MARKETS:
@@ -108,3 +104,12 @@ json.dump({'updated': NOW.strftime('%Y-%m-%dT%H:%M:%SZ'), 'score': score, 'band'
            'reviewed': cur['reviewed'], 'status': status, 'history': hist,
            'prev_score': prev.get('score')}, open(OUT, 'w'), indent=1, ensure_ascii=False)
 print(score, band, status)
+
+# --- append today's live point to data/brink_history.json (fail-safe) ---
+try:
+    h = history.load()
+    h['points'] = [p for p in h['points'] if p['date'] != day] + [{'date': day, 'score': score, 'mode': 'live',
+        'factors': {f['id']: f['score'] for f in factors}}]
+    history.save(h)
+except Exception as e:
+    print('history append failed:', e)

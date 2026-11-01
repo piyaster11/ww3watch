@@ -38,6 +38,11 @@ ul{margin:0;padding-left:18px}li{margin:6px 0}
 .v{background:#123d2a;color:#5be3a0}.s{background:#3d2a12;color:#ffb35b}
 .wt{display:grid;grid-template-columns:80px 1fr;gap:10px;padding:6px 0;border-top:1px dashed var(--ln)}.wt b{color:var(--r);font:700 12px monospace}
 .do li{margin:8px 0}.foot{font-size:12px;color:var(--m)}
+.dl{display:flex;gap:18px;flex-wrap:wrap;font:700 14px monospace;margin-top:6px}.dl span{padding:4px 10px;border:1px solid var(--ln);border-radius:4px;background:#0b0b0e}
+.up{color:#ff4d4d}.dn{color:#3ddc84}.fl{color:var(--m)}
+#chart{position:relative}#chart svg{width:100%;height:auto;display:block}
+#tip{position:absolute;pointer-events:none;background:#000;border:1px solid var(--r);box-shadow:0 0 12px rgba(255,42,42,.5);padding:6px 9px;font:12px monospace;border-radius:4px;display:none;white-space:nowrap;z-index:5}
+.lg{font:11px monospace;color:var(--m);margin-top:8px}.lg i{display:inline-block;width:18px;height:0;border-top:2px solid var(--r);vertical-align:middle;margin:0 4px 0 12px}
 @media(max-width:760px){.hero,.g2{grid-template-columns:1fr}.f{grid-template-columns:1fr 46px}.f .why{grid-column:1/-1}.num b{font-size:80px}.logo{font-size:22px;letter-spacing:5px}}
 </style></head><body>
 <div class="pv">PREVIEW — not live yet</div>
@@ -47,8 +52,10 @@ ul{margin:0;padding-left:18px}li{margin:6px 0}
  <div class="gw"><div class="radar"></div><svg viewBox="0 0 200 200" id="g"></svg><div class="num"><b id="sc">–</b><span>OUT OF 10</span></div></div>
  <div><div class="band" id="band">…</div>
   <div class="scale" id="scale"></div><div class="sl"><span>1 CALM</span><span>TENSE</span><span>ELEVATED</span><span>DANGER</span><span>10 BRINK</span></div>
-  <p class="verdict" id="verdict"></p><p class="foot" id="delta"></p></div>
+  <p class="verdict" id="verdict"></p><div class="dl" id="dl"></div><p class="foot" id="delta"></p></div>
 </section>
+<div class="card"><h2>📈 Last 30 days</h2><div id="chart"><div id="tip"></div></div>
+<div class="lg"><i style="border-top-style:dashed"></i>reconstructed from dated sources <i></i>live daily reading <i style="border-top:2px dotted #fff;opacity:.6"></i>key event (hover)</div></div>
 <div class="card"><h2>⚠ The 9 signals</h2><div id="factors"></div></div>
 <div class="g2">
  <div class="card"><h2>What changed</h2><ul id="changed"></ul></div>
@@ -62,6 +69,7 @@ ul{margin:0;padding-left:18px}li{margin:6px 0}
 <li><b>Keep a basic 72-hour kit</b> (water, cash, medicine, power bank) — useful for floods and blackouts too.</li>
 <li><b>Check before you share.</b> Most "WW3 tonight" posts are recycled or fake.</li></ul></div>
 <div class="card"><h2>Methodology</h2><p class="foot">Nine signals are each scored 1–10 and combined by weight (shown on each row). <b>Live</b> signals refresh automatically every day at ~07:00 Bangkok: <i>Prediction markets</i> = combined Polymarket odds of five major escalation events (0% → 1, 40%+ → 10); <i>Market fear</i> = average 1-year percentile of VIX, gold, Brent and the ITA defense ETF (Yahoo Finance); <i>Travel bans</i> = count of US State Dept Level-4 countries above a chronic baseline of ~18, plus embassy departures. <b>Curated</b> signals are scored by an analyst from linked reporting and dated. Bands: 1–2.4 Calm · 2.5–4.4 Tense · 4.5–6.4 Elevated · 6.5–8.4 Danger · 8.5–10 Brink. If a live source fails, its last value is kept and marked stale.</p>
+<p class="foot"><b>30-day chart:</b> points from 1 Nov 2026 onward are <b>live</b> (recorded by the daily 07:00 refresh). Earlier points are <b>reconstructed</b>: market fear from real Yahoo daily closes, prediction markets from Polymarket's public daily price history, curated signals from dated reporting (ISW, JINSA, CBS, Al Jazeera) carried forward between documented change points, and travel advisories carried at today's value because the State Dept feed is not dated per change. Note: the "ceasefire breaks before midterms" market loses risk mechanically as 3 Nov approaches.</p>
 <p class="foot"><b>Disclaimer:</b> BRINK is an independent, unofficial gauge for awareness only. It is not a prediction, not the US DEFCON system, and not investment advice. Free data only. A Piyaster 99/99 project.</p></div>
 </div>
 <script>
@@ -89,5 +97,33 @@ fetch('data/brink.json?'+Date.now()).then(r=>r.json()).then(d=>{
  changed.innerHTML=d.changed.map(x=>`<li><span class="tag v">VERIFIED</span>${e(x[0])} <a href="${e(x[1])}" target="_blank" rel="noopener">source ↗</a></li>`).join('');
  watch.innerHTML=d.watch.map(x=>`<div class="wt"><b>${e(x[0])}</b><div>${e(x[1])} <a href="${e(x[2])}" target="_blank" rel="noopener">↗</a></div></div>`).join('');
  spec.innerHTML=d.speculation.map(x=>`<li><span class="tag s">UNVERIFIED</span>${e(x[0])} <a href="${e(x[1])}" target="_blank" rel="noopener">context ↗</a></li>`).join('');
+});
+
+fetch('data/brink_history.json?'+Date.now()).then(r=>r.json()).then(h=>{
+ const P=h.points.slice(-31);if(!P.length)return;const last=P[P.length-1];
+ const at=n=>{const t=new Date(last.date);t.setDate(t.getDate()-n);const k=t.toISOString().slice(0,10);return P.find(p=>p.date===k)};
+ const dd=(p,lab)=>{if(!p)return`<span class="fl">${lab}: n/a</span>`;const x=+(last.score-p.score).toFixed(1);const c=x>0?'up':x<0?'dn':'fl';return`<span class="${c}">${x>0?'▲ +':x<0?'▼ ':'■ '}${x} vs ${lab} (${p.score})</span>`};
+ dl.innerHTML=dd(at(7),'7 days ago')+dd(at(30),'30 days ago');
+ const Wd=900,Ht=260,L=34,R=12,T=12,B=28,n=P.length,X=i=>L+(Wd-L-R)*i/(n-1),lo=4,hi=9,Y=v=>T+(Ht-T-B)*(hi-v)/(hi-lo);
+ let g='';[[lo,4.5,'#c6e14b'],[4.5,6.5,'#ffb020'],[6.5,8.5,'#ff5a1f'],[8.5,hi,'#ff1a1a']].forEach(([a,b,c])=>{g+=`<rect x="${L}" y="${Y(b)}" width="${Wd-L-R}" height="${Y(a)-Y(b)}" fill="${c}" opacity=".07"/>`});
+ [['ELEVATED',5.5],['DANGER',7.5],['BRINK',8.75]].forEach(([t,v])=>g+=`<text x="${Wd-R-4}" y="${Y(v)+3}" fill="#8a8790" font-size="9" text-anchor="end" font-family="monospace" opacity=".7">${t}</text>`);
+ for(let v=lo;v<=hi;v++)g+=`<line x1="${L}" x2="${Wd-R}" y1="${Y(v)}" y2="${Y(v)}" stroke="#222" /><text x="${L-6}" y="${Y(v)+3}" fill="#8a8790" font-size="10" text-anchor="end" font-family="monospace">${v}</text>`;
+ const idx=d=>P.findIndex(p=>p.date===d);
+ (h.events||[]).forEach(ev=>{const i=idx(ev[0]);if(i<0)return;g+=`<line x1="${X(i)}" x2="${X(i)}" y1="${T}" y2="${Ht-B}" stroke="#fff" stroke-dasharray="1 3" opacity=".45"/><circle cx="${X(i)}" cy="${T+4}" r="3.5" fill="#ff2a2a" class="ev" data-i="${i}"/>`});
+ const pts=P.map((p,i)=>[X(i),Y(p.score)]);
+ g+=`<defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2a2a" stop-opacity=".45"/><stop offset="1" stop-color="#ff2a2a" stop-opacity="0"/></linearGradient></defs>`;
+ g+=`<path d="M${pts.map(p=>p.join(',')).join('L')}L${X(n-1)},${Ht-B}L${X(0)},${Ht-B}Z" fill="url(#ag)"/>`;
+ const li=P.findIndex(p=>p.mode==='live');const rec=li<0?pts:pts.slice(0,li+1),liv=li<0?[]:pts.slice(li);
+ g+=`<path d="M${rec.map(p=>p.join(',')).join('L')}" fill="none" stroke="#ff2a2a" stroke-width="2" stroke-dasharray="5 4" style="filter:drop-shadow(0 0 4px red)"/>`;
+ if(liv.length>1)g+=`<path d="M${liv.map(p=>p.join(',')).join('L')}" fill="none" stroke="#ff2a2a" stroke-width="2.6" style="filter:drop-shadow(0 0 6px red)"/>`;
+ P.forEach((p,i)=>{g+=`<circle cx="${X(i)}" cy="${Y(p.score)}" r="${p.mode==='live'?4.5:2.2}" fill="${p.mode==='live'?'#fff':'#ff2a2a'}"/>`;if(i%5==0||i==n-1)g+=`<text x="${X(i)}" y="${Ht-8}" fill="#8a8790" font-size="10" text-anchor="middle" font-family="monospace">${new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'})}</text>`});
+ g+=`<line id="cx" y1="${T}" y2="${Ht-B}" stroke="#ff2a2a" opacity="0"/><rect x="${L}" y="0" width="${Wd-L-R}" height="${Ht}" fill="transparent" id="hz"/>`;
+ chart.insertAdjacentHTML('afterbegin',`<svg viewBox="0 0 ${Wd} ${Ht}">${g}</svg>`);
+ const sv=chart.querySelector('svg'),hz=sv.querySelector('#hz'),cx=sv.querySelector('#cx');
+ hz.addEventListener('mousemove',ev=>{const r=sv.getBoundingClientRect(),x=(ev.clientX-r.left)*Wd/r.width,i=Math.max(0,Math.min(n-1,Math.round((x-L)/(Wd-L-R)*(n-1)))),p=P[i];
+  const e2=(h.events||[]).find(e=>e[0]===p.date);cx.setAttribute('x1',X(i));cx.setAttribute('x2',X(i));cx.setAttribute('opacity',.6);
+  tip.style.display='block';tip.innerHTML=`<b>${new Date(p.date).toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'})}</b> · <b style="color:${C(p.score)}">${p.score}</b> · ${p.mode.toUpperCase()}${e2?'<br>⚑ '+e(e2[1]):''}`;
+  const px=X(i)*r.width/Wd;tip.style.left=Math.min(px+10,r.width-230)+'px';tip.style.top='10px'});
+ hz.addEventListener('mouseleave',()=>{tip.style.display='none';cx.setAttribute('opacity',0)});
 });
 </script></body></html>
