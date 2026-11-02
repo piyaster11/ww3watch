@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01T11:23:32Z",
+ "updated": "2026-11-02T03:56:29Z",
  "score": 6.6,
  "band": "DANGER",
  "factors": [
@@ -263,14 +263,14 @@
     }
    ],
    "kind": "live",
-   "asof": "2026-11-01T11:23:32Z"
+   "asof": "2026-11-02T03:56:29Z"
   },
   {
    "id": "markets",
    "name": "Prediction markets",
    "weight": 0.1,
-   "score": 5.1,
-   "why": "Combined odds of 5 major escalation events: 18.3%",
+   "score": 4.9,
+   "why": "Combined odds of 5 major escalation events: 17.3%",
    "rows": [
     {
      "label": "US–Iran ceasefire breaks before midterms",
@@ -279,12 +279,12 @@
     },
     {
      "label": "China invades Taiwan in 2026",
-     "p": 1.8,
+     "p": 1.9,
      "link": "https://polymarket.com/event/will-china-invade-taiwan-before-2027"
     },
     {
      "label": "Russia invades a NATO country in 2026",
-     "p": 3.8,
+     "p": 3.5,
      "link": "https://polymarket.com/event/will-russia-invade-a-nato-country-in-2025"
     },
     {
@@ -294,18 +294,18 @@
     },
     {
      "label": "Iran gets a nuke before 2027",
-     "p": 4.0,
+     "p": 3.2,
      "link": "https://polymarket.com/event/iran-nuke-before-2027"
     }
    ],
    "kind": "live",
-   "asof": "2026-11-01T11:23:32Z"
+   "asof": "2026-11-02T03:56:29Z"
   },
   {
    "id": "fear",
    "name": "Market fear (VIX, gold, oil, defense)",
    "weight": 0.08,
-   "score": 5.4,
+   "score": 5.3,
    "why": "Average 1-year percentile of fear assets: 48%",
    "rows": [
     {
@@ -316,14 +316,14 @@
     },
     {
      "label": "Gold",
-     "v": 3898.9,
-     "pct": 0,
+     "v": 3915.1,
+     "pct": 1,
      "link": "https://finance.yahoo.com/quote/GC%3DF"
     },
     {
      "label": "Brent oil",
-     "v": 113.43,
-     "pct": 96,
+     "v": 109.99,
+     "pct": 93,
      "link": "https://finance.yahoo.com/quote/BZ%3DF"
     },
     {
@@ -334,7 +334,7 @@
     }
    ],
    "kind": "live",
-   "asof": "2026-11-01T11:23:32Z"
+   "asof": "2026-11-02T03:56:29Z"
   },
   {
    "id": "doomsday",
@@ -415,6 +415,10 @@
  "history": [
   [
    "2026-11-01",
+   6.6
+  ],
+  [
+   "2026-11-02",
    6.6
   ]
  ],
