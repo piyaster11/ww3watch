@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T03:56:29Z",
+ "updated": "2026-11-03T04:58:06Z",
  "score": 6.6,
  "band": "DANGER",
  "factors": [
@@ -263,7 +263,7 @@
     }
    ],
    "kind": "live",
-   "asof": "2026-11-02T03:56:29Z"
+   "asof": "2026-11-03T04:58:06Z"
   },
   {
    "id": "markets",
@@ -299,42 +299,43 @@
     }
    ],
    "kind": "live",
-   "asof": "2026-11-02T03:56:29Z"
+   "asof": "2026-11-02T03:56:29Z",
+   "stale": true
   },
   {
    "id": "fear",
    "name": "Market fear (VIX, gold, oil, defense)",
    "weight": 0.08,
-   "score": 5.3,
-   "why": "Average 1-year percentile of fear assets: 48%",
+   "score": 5.4,
+   "why": "Average 1-year percentile of fear assets: 49%",
    "rows": [
     {
      "label": "VIX fear index",
-     "v": 19.42,
-     "pct": 78,
+     "v": 21.15,
+     "pct": 87,
      "link": "https://finance.yahoo.com/quote/%5EVIX"
     },
     {
      "label": "Gold",
-     "v": 3915.1,
+     "v": 3932.5,
      "pct": 1,
      "link": "https://finance.yahoo.com/quote/GC%3DF"
     },
     {
      "label": "Brent oil",
-     "v": 109.99,
-     "pct": 93,
+     "v": 105.25,
+     "pct": 82,
      "link": "https://finance.yahoo.com/quote/BZ%3DF"
     },
     {
      "label": "US defense stocks (ITA)",
-     "v": 209.74,
-     "pct": 21,
+     "v": 214.68,
+     "pct": 27,
      "link": "https://finance.yahoo.com/quote/ITA"
     }
    ],
    "kind": "live",
-   "asof": "2026-11-02T03:56:29Z"
+   "asof": "2026-11-03T04:58:06Z"
   },
   {
    "id": "doomsday",
@@ -409,7 +410,7 @@
  "reviewed": "2026-11-01",
  "status": {
   "Embassy evacuations & travel bans": "ok",
-  "Prediction markets": "ok",
+  "Prediction markets": "failed: list index out of range",
   "Market fear (VIX, gold, oil, defense)": "ok"
  },
  "history": [
@@ -419,6 +420,10 @@
   ],
   [
    "2026-11-02",
+   6.6
+  ],
+  [
+   "2026-11-03",
    6.6
   ]
  ],
