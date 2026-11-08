@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T04:13:06Z",
+ "updated": "2026-11-08T03:56:09Z",
  "score": 6.5,
  "band": "DANGER",
  "factors": [
@@ -263,7 +263,7 @@
     }
    ],
    "kind": "live",
-   "asof": "2026-11-07T04:13:06Z"
+   "asof": "2026-11-08T03:56:09Z"
   },
   {
    "id": "markets",
@@ -317,14 +317,14 @@
     },
     {
      "label": "Gold",
-     "v": 4079.5,
-     "pct": 13,
+     "v": 4074.9,
+     "pct": 12,
      "link": "https://finance.yahoo.com/quote/GC%3DF"
     },
     {
      "label": "Brent oil",
-     "v": 97.76,
-     "pct": 64,
+     "v": 98.32,
+     "pct": 65,
      "link": "https://finance.yahoo.com/quote/BZ%3DF"
     },
     {
@@ -335,7 +335,7 @@
     }
    ],
    "kind": "live",
-   "asof": "2026-11-07T04:13:06Z"
+   "asof": "2026-11-08T03:56:09Z"
   },
   {
    "id": "doomsday",
@@ -440,6 +440,10 @@
   ],
   [
    "2026-11-07",
+   6.5
+  ],
+  [
+   "2026-11-08",
    6.5
   ]
  ],
