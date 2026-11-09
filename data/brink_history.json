@@ -637,6 +637,22 @@
 "fear": 5.2,
 "doomsday": 9
 }
+},
+{
+"date": "2026-11-09",
+"score": 6.6,
+"mode": "live",
+"factors": {
+"greatpower": 7,
+"wars": 7,
+"nuclear": 7,
+"mobilization": 6,
+"chokepoints": 7,
+"advisories": 4.9,
+"markets": 4.9,
+"fear": 5.3,
+"doomsday": 9
+}
 }
 ],
 "events": [
