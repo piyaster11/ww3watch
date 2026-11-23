@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T04:41:03Z",
+ "updated": "2026-11-23T05:18:20Z",
  "score": 6.5,
  "band": "DANGER",
  "factors": [
@@ -263,7 +263,7 @@
     }
    ],
    "kind": "live",
-   "asof": "2026-11-22T04:41:03Z"
+   "asof": "2026-11-23T05:18:20Z"
   },
   {
    "id": "markets",
@@ -306,8 +306,8 @@
    "id": "fear",
    "name": "Market fear (VIX, gold, oil, defense)",
    "weight": 0.08,
-   "score": 4.5,
-   "why": "Average 1-year percentile of fear assets: 38%",
+   "score": 4.3,
+   "why": "Average 1-year percentile of fear assets: 36%",
    "rows": [
     {
      "label": "VIX fear index",
@@ -317,14 +317,14 @@
     },
     {
      "label": "Gold",
-     "v": 3515.4,
-     "pct": 0,
+     "v": 3605.5,
+     "pct": 1,
      "link": "https://finance.yahoo.com/quote/GC%3DF"
     },
     {
      "label": "Brent oil",
-     "v": 92.57,
-     "pct": 53,
+     "v": 90.07,
+     "pct": 45,
      "link": "https://finance.yahoo.com/quote/BZ%3DF"
     },
     {
@@ -335,7 +335,7 @@
     }
    ],
    "kind": "live",
-   "asof": "2026-11-22T04:41:03Z"
+   "asof": "2026-11-23T05:18:20Z"
   },
   {
    "id": "doomsday",
@@ -500,6 +500,10 @@
   ],
   [
    "2026-11-22",
+   6.5
+  ],
+  [
+   "2026-11-23",
    6.5
   ]
  ],
